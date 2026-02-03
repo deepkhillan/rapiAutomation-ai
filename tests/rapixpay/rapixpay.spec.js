@@ -65,11 +65,12 @@ test.describe('Rapix Pay Automation - JavaScript POM', () => {
         // Allow for transaction fees if any, but requirement says initial balance ± (order amount × orders)
         expect(balanceAfter).toBeLessThanOrEqual(balanceBefore);
 
-        // 5. Validate Master Transaction History
+        // 5. Validate Master Transaction History (at least one new, at most numOrders new entries – no duplication)
         await historyPage.goto();
         await historyPage.switchToRapixPay();
         const countAfter = await historyPage.getTransactionCount();
-        expect(countAfter).toBeGreaterThanOrEqual(countBefore);
+        expect(countAfter).toBeGreaterThanOrEqual(countBefore + 1);
+        expect(countAfter).toBeLessThanOrEqual(countBefore + numOrders);
 
         // 6. Validate Rapix Pay Recent Transactions listing
         await rapixPayPage.goto();
