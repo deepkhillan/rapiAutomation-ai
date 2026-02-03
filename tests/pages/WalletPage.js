@@ -17,8 +17,8 @@ export class WalletPage {
     }
 
     /**
-     * Get balance for a specific coin
-     * @param {string} coinSymbol e.g. 'BTC', 'ETH'
+     * Get balance for a specific coin (crypto or fiat)
+     * @param {string} coinSymbol e.g. 'BTC', 'ETH', 'USD', 'USDT'
      * @returns {Promise<number>}
      */
     async getBalance(coinSymbol) {
@@ -26,14 +26,47 @@ export class WalletPage {
         await this.searchField.fill(coinSymbol);
         await this.page.waitForTimeout(2000); // Wait for filter
 
-        // Find the row containing the coin symbol
         const row = this.page.locator('tr').filter({ hasText: coinSymbol }).first();
-        // Assuming "Available" is the 3rd or 4th column. Let's look at the screenshot.
-        // Columns: Coin Name, Total Balance, Available, Locked, Action.
-        // "Available" is the 3rd data column (index 2 or 3 usually)
+        // Available balance: typically 3rd data column (index 2)
         const availableText = await row.locator('td').nth(2).innerText();
         const balance = parseFloat(availableText.replace(/[^0-9.]/g, ''));
         console.log(`Available balance for ${coinSymbol}: ${balance}`);
         return balance;
+    }
+
+    /**
+     * Capture fiat balance (USD or USDT)
+     * @param {string} fiatSymbol e.g. 'USD', 'USDT'
+     * @returns {Promise<number>}
+     */
+    async getFiatBalance(fiatSymbol = 'USD') {
+        return this.getBalance(fiatSymbol);
+    }
+
+    /**
+     * Capture crypto balance for a given coin
+     * @param {string} cryptoSymbol e.g. 'BTC', 'ETH'
+     * @returns {Promise<number>}
+     */
+    async getCryptoBalance(cryptoSymbol) {
+        return this.getBalance(cryptoSymbol);
+    }
+
+    /**
+     * Capture multiple balances at once (for before/after snapshots)
+     * @param {string[]} symbols e.g. ['USD', 'BTC']
+     * @returns {Promise<Object<string, number>>} e.g. { USD: 100, BTC: 0.001 }
+     */
+    async getBalances(symbols) {
+        const result = {};
+        for (const symbol of symbols) {
+            try {
+                result[symbol] = await this.getBalance(symbol);
+            } catch (e) {
+                console.log(`Could not get balance for ${symbol}:`, e.message);
+                result[symbol] = NaN;
+            }
+        }
+        return result;
     }
 }
