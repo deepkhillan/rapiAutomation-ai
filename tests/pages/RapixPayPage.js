@@ -41,12 +41,25 @@ export class RapixPayPage {
 
         await this.sendButton.click();
         await this.emailInput.fill(email);
-        await this.continueButton.click();
+
+        // Wait for potential auto-verification
         await this.page.waitForTimeout(2000);
+
+        console.log('Clicking Continue...');
+        await this.continueButton.click();
+
+        // Wait and check if we moved to step 2
+        await this.page.waitForTimeout(3000);
+        if (await this.emailInput.isVisible()) {
+            console.log('Still on step 1, retrying Continue...');
+            await this.continueButton.click({ force: true });
+            await this.page.waitForTimeout(3000);
+        }
 
         // Select Coin from dropdown
         if (coin !== 'default') {
             await this.coinDropdown.click();
+            await this.page.waitForTimeout(1000);
             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
             await coinOption.click();
         }
