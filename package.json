@@ -1,0 +1,26 @@
+{
+  "name": "rapixchange",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:signup": "playwright test tests/signup",
+    "test:login": "playwright test tests/login",
+    "test:phone": "playwright test tests/signup/signup.phone_validation.spec.js",
+    "test:buysell": "playwright test tests/buysell/buysell.spec.js",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed:all": "playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.1.0"
+  }
+}
