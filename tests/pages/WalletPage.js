@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
 
 export class WalletPage {
     constructor(page) {
@@ -12,8 +13,21 @@ export class WalletPage {
 
     async goto() {
         console.log('Navigating to Wallets page...');
-        await this.sidebarLink.click();
-        await this.page.waitForLoadState('networkidle');
+        const url = await navigateToFeature(this.page, APP_ROUTES.wallets);
+        if (!APP_ROUTES.wallets.urlPattern.test(url)) {
+            await this.sidebarLink.click({ timeout: 15000 });
+        }
+        await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+        await this.ensureCryptoWalletTab();
+        await this.page.waitForTimeout(2000);
+        console.log(`Wallets URL: ${this.page.url()}`);
+    }
+
+    async ensureCryptoWalletTab() {
+        if (await this.cryptoWalletTab.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.cryptoWalletTab.click();
+            await this.page.waitForTimeout(1500);
+        }
     }
 
     /**
@@ -23,15 +37,37 @@ export class WalletPage {
      */
     async getBalance(coinSymbol) {
         console.log(`Getting balance for ${coinSymbol}...`);
-        await this.searchField.fill(coinSymbol);
-        await this.page.waitForTimeout(2000); // Wait for filter
+        await this.ensureCryptoWalletTab();
 
-        const row = this.page.locator('tr').filter({ hasText: coinSymbol }).first();
-        // Available balance: typically 3rd data column (index 2)
-        const availableText = await row.locator('td').nth(2).innerText();
-        const balance = parseFloat(availableText.replace(/[^0-9.]/g, ''));
+        const search = this.page.locator('input[placeholder*="Search" i], input[type="search"]').first();
+        if (await search.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await search.fill('');
+            await search.fill(coinSymbol);
+            await this.page.waitForTimeout(2000);
+        }
+
+        const row = this.page.locator('tr, [class*="table-row"], [class*="wallet-row"], [class*="asset-row"]')
+            .filter({ hasText: new RegExp(coinSymbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') }).first();
+        const card = this.page.locator('div[class*="card"], div[class*="wallet"], div[class*="asset"]')
+            .filter({ hasText: new RegExp(coinSymbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') }).first();
+
+        let balanceText = '';
+        if (await row.isVisible({ timeout: 8000 }).catch(() => false)) {
+            const cells = row.locator('td, [class*="cell"]');
+            const cellCount = await cells.count();
+            const availableIndex = cellCount >= 3 ? 2 : 1;
+            balanceText = await cells.nth(availableIndex).innerText().catch(() => row.innerText());
+        } else if (await card.isVisible({ timeout: 5000 }).catch(() => false)) {
+            balanceText = await card.innerText();
+        } else {
+            console.log(`Wallet row/card not found for ${coinSymbol}; returning 0.`);
+            return 0;
+        }
+
+        const match = balanceText.match(/[\d,]+\.?\d*/);
+        const balance = match ? parseFloat(match[0].replace(/,/g, '')) : NaN;
         console.log(`Available balance for ${coinSymbol}: ${balance}`);
-        return balance;
+        return Number.isFinite(balance) ? balance : 0;
     }
 
     /**

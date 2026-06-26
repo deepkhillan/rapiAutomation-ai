@@ -1,89 +1,70 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage.js';
 import { RapixPayPage } from '../pages/RapixPayPage.js';
 import { WalletPage } from '../pages/WalletPage.js';
 import { TransactionHistoryPage } from '../pages/TransactionHistoryPage.js';
 import { providedCredentials } from '../utils/testData.js';
+import { prepareAuthenticatedPage } from '../utils/prepareAuthenticatedPage.js';
 
 /**
  * Rapix Pay Feature Test Suite
- * Includes balance validation, history check, and negative scenarios for order count.
+ * Session: login once via tests/auth/auth.setup.js (--project=authenticated).
  */
 test.describe('Rapix Pay Automation - JavaScript POM', () => {
-    let loginPage;
     let rapixPayPage;
     let walletPage;
     let historyPage;
 
-    // Test Data
     const TEST_COIN = 'ETH';
     const RECIPIENT_EMAIL = 'jot.antier@gmail.com';
     const ORDER_AMOUNT = 0.001;
 
     test.beforeEach(async ({ page }) => {
         test.setTimeout(180000);
-
-        loginPage = new LoginPage(page);
+        await prepareAuthenticatedPage(page);
         rapixPayPage = new RapixPayPage(page);
         walletPage = new WalletPage(page);
         historyPage = new TransactionHistoryPage(page);
-
-        console.log('--- Step 1: Login ---');
-        await loginPage.goto();
-        await loginPage.login(providedCredentials.email, providedCredentials.password);
-        await loginPage.enterPin(providedCredentials.pin);
     });
 
     test('TC-RP-01: Valid Rapix Pay Order Flow', async ({ page }) => {
         const numOrders = 2;
 
-        // 1. Capture Wallet Balance BEFORE
         await walletPage.goto();
         const balanceBefore = await walletPage.getBalance(TEST_COIN);
 
-        // 2. Capture Transaction History Count BEFORE
         await historyPage.goto();
         await historyPage.switchToRapixPay();
         const countBefore = await historyPage.getTransactionCount();
 
-        // 3. Place Rapix Pay Send Order
         await rapixPayPage.goto();
         await rapixPayPage.placeSendOrder(RECIPIENT_EMAIL, TEST_COIN, ORDER_AMOUNT, numOrders);
 
-        // Final PIN verification if required for the transaction
         const BuySellPage = (await import('../pages/BuySellPage.js')).BuySellPage;
         const buySellPage = new BuySellPage(page);
         await buySellPage.enterPin(providedCredentials.pin);
 
         console.log('Order placed successfully.');
 
-        // 4. Validate Wallet Balance AFTER
         const expectedFinalBalance = balanceBefore - (ORDER_AMOUNT * numOrders);
         await walletPage.goto();
         const balanceAfter = await walletPage.getBalance(TEST_COIN);
         console.log(`Initial: ${balanceBefore}, Final: ${balanceAfter}, Expected: ${expectedFinalBalance}`);
-        // Allow for transaction fees if any, but requirement says initial balance ± (order amount × orders)
         expect(balanceAfter).toBeLessThanOrEqual(balanceBefore);
 
-        // 5. Validate Master Transaction History (at least one new, at most numOrders new entries – no duplication)
         await historyPage.goto();
         await historyPage.switchToRapixPay();
         const countAfter = await historyPage.getTransactionCount();
         expect(countAfter).toBeGreaterThanOrEqual(countBefore + 1);
         expect(countAfter).toBeLessThanOrEqual(countBefore + numOrders);
 
-        // 6. Validate Rapix Pay Recent Transactions listing
         await rapixPayPage.goto();
         const recentPayTx = await rapixPayPage.getLatestTransactionDetails();
         expect(recentPayTx).toContain(TEST_COIN);
     });
 
-    /**
-     * Data-driven Negative Testing
-     */
     const invalidScenarios = [
         { count: '0', description: 'Zero orders' },
-        { count: '-5', description: 'Negative orders' }
+        { count: '-5', description: 'Negative orders' },
     ];
 
     for (const scenario of invalidScenarios) {
@@ -99,4 +80,27 @@ test.describe('Rapix Pay Automation - JavaScript POM', () => {
             expect(finalBalance).toBe(initialBalance);
         });
     }
+
+    test('TC-RP-NEG-03: RapiX Pay – invalid recipient email shows validation', async ({ page }) => {
+        await rapixPayPage.goto();
+        await page.waitForTimeout(2000);
+        const sendBtn = rapixPayPage.sendButton;
+        if (!(await sendBtn.isVisible({ timeout: 5000 }).catch(() => false))) {
+            test.skip();
+            return;
+        }
+        await sendBtn.click();
+        await page.waitForTimeout(1000);
+        const emailInput = rapixPayPage.emailInput;
+        if (await emailInput.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await emailInput.fill('invalid-email-no-at');
+            await emailInput.blur().catch(() => {});
+            await page.waitForTimeout(1500);
+        }
+        const errorMsg = page.locator('text=/valid email|invalid|enter a valid|invalid email/i').first();
+        const continueBtn = rapixPayPage.continueButton;
+        const hasError = await errorMsg.isVisible({ timeout: 3000 }).catch(() => false);
+        const continueDisabled = await continueBtn.isDisabled().catch(() => false);
+        expect(hasError || continueDisabled).toBeTruthy();
+    });
 });

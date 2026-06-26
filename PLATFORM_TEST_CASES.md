@@ -102,7 +102,7 @@ This document lists **all features** on the platform and their **positive** and 
 
 | ID | Type | Description | Spec |
 |----|------|-------------|------|
-| TC-TR-E2E-CRYPTO | Positive | Crypto 0.1 – full flow: form → Send → Continue → PIN → order completed | `tests/transfer_swap/internal_transfer.spec.js` (project: transfer) |
+| TC-TR-E2E-CRYPTO | Positive | Crypto 0.1 – full flow: form → Send → Continue → PIN → order completed | `tests/transfer_swap/internal_transfer.spec.js` (project: authenticated) |
 | TC-TR-E2E-FIAT | Positive | Fiat 10 – Fiat tab → Internal Transfer → Send USD → Continue → PIN → order completed | same |
 | TC-TR-01 | Positive | Fiat (USD) – page loads and form available | same |
 | TC-TR-02 | Positive | Crypto – page loads and asset selection available | same |
@@ -118,7 +118,7 @@ This document lists **all features** on the platform and their **positive** and 
 
 | ID | Type | Description | Spec |
 |----|------|-------------|------|
-| TC-SW-01 | Positive | Swapping tab → select ETH-USDT → enter 0.005 You Pay → Swap → review modal | `tests/transfer_swap/swap.spec.js` (project: swap) |
+| TC-SW-01 | Positive | Swapping tab → select ETH-USDT → enter 0.005 You Pay → Swap → review modal | `tests/transfer_swap/swap.spec.js` (project: authenticated) |
 | TC-SW-02 | Positive | Full flow ETH→USDT 0.005 → Continue → Successfully Swap popup | same |
 | TC-SW-03 | Positive | Success popup shows "successfully swap" text | same |
 | TC-SW-04 | Positive | Swap page loads – Crypto Swap tab, You Pay / You Receive visible | same |
@@ -183,33 +183,33 @@ Full positive and negative test cases are documented in dedicated files:
 ## Running the Whole Platform in One Go
 
 
-Use the **platform** script to run all feature specs in sequence (URL check, login, signup, buy/sell, RapiX Pay, deposit/withdraw, swap with auth, internal transfer with auth):
+Use the **features** script to run all post-login specs with **one login** (auth setup saves session, then all feature tests reuse it):
 
 ```bash
-npm run test:platform
+npm run test:features
 ```
 
-Individual feature scripts:
+Alias: `npm run test:post-login`
+
+Auth is saved to `playwright/.auth/user.json` by `tests/auth/auth.setup.js` (runs automatically as a dependency of the `authenticated` project).
+
+Individual feature scripts (each uses `--project=authenticated` – login once per run, not per test):
 
 | Script | What it runs |
 |--------|----------------|
-| `npm run test` | All tests (chromium; transfer/swap specs need their projects) |
-| `npm run test:url` | URL verification (rapixchange.com) |
-| `npm run test:login` | Login positive + negative |
-| `npm run test:signup` | Signup positive + negative |
-| `npm run test:phone` | Signup phone validation |
+| `npm run test:features` | **All post-login features** (login once → dashboard, buy/sell, RapiX Pay, deposit/withdraw, history, swap, transfer) |
 | `npm run test:dashboard` | Dashboard – post-login visibility |
 | `npm run test:buysell` | Buy/Sell – all coins + focused positive/negative |
-| `npm run test:rapixpay` | RapiX Pay – valid order + negative (0 / negative orders / invalid email) |
-| `npm run test:deposit:withdraw` | Wallets – deposit/withdraw for BTC, ETH, USDT + negative |
-| `npm run test:swap` | Swapping – Crypto Swap + Fiat Swap (with saved auth) |
-| `npm run test:transfer` | Internal Transfer (with saved auth) |
-| `npm run test:history` | Transaction History – positive + negative |
+| `npm run test:rapixpay` | RapiX Pay – valid order + negative |
+| `npm run test:deposit:withdraw` | Wallets – deposit/withdraw |
+| `npm run test:swap` | Swapping – Crypto Swap + Fiat Swap |
+| `npm run test:transfer` | Internal Transfer |
+| `npm run test:history` | Transaction History |
 
-To run **everything** including auth-dependent flows in one command:
+Full platform (URL + login/signup tests + all features):
 
 ```bash
 npm run test:platform
 ```
 
-This runs: URL → Login → Signup → Phone validation → Dashboard → Buy/Sell → RapiX Pay → Deposit/Withdraw → Transaction History → Swap (project swap) → Internal Transfer (project transfer).
+This runs: URL → Login → Signup → Phone validation → **test:features** (single auth for all post-login specs).

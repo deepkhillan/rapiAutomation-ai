@@ -57,6 +57,11 @@ export function generateStrongPassword() {
 }
 
 /**
+ * Transfer recipient email for Internal Transfer / Rapix Pay flows
+ */
+export const transferRecipientEmail = 'jot.antier@gmail.com';
+
+/**
  * Provided test credentials for manual/real testing
  */
 export const providedCredentials = {

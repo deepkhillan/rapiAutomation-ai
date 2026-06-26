@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage.js';
+import { BuySellPage } from '../pages/BuySellPage.js';
 import { providedCredentials } from '../utils/testData.js';
 import fs from 'fs';
 
@@ -12,10 +13,9 @@ test('Discover available crypto coins v2', async ({ page }) => {
     await loginPage.login(providedCredentials.email, providedCredentials.password);
     await loginPage.enterPin(providedCredentials.pin);
 
-    console.log('--- Navigating to Buy/Sell ---');
-    await page.goto('https://uat-eks.rapixchange.com/buysell', { timeout: 60000 });
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(5000);
+    console.log('--- Navigating to Buy/Sell via sidebar (not direct /buy-sell URL) ---');
+    const buySellPage = new BuySellPage(page);
+    await buySellPage.goto();
 
     // Close any notifications if they are open
     const closeNotification = page.locator('button:has-text("Close"), .close-icon, .notification-close').first();

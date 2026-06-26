@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
 
 /**
  * Rapix Pay Page Object Model
@@ -28,9 +29,13 @@ export class RapixPayPage {
 
     async goto() {
         console.log('Navigating to Rapix Pay...');
-        await this.sidebarLink.click();
-        await this.page.waitForLoadState('networkidle');
+        const url = await navigateToFeature(this.page, APP_ROUTES.rapixPay);
+        if (!APP_ROUTES.rapixPay.urlPattern.test(url)) {
+            await this.sidebarLink.click({ timeout: 15000 });
+        }
+        await this.page.waitForLoadState('domcontentloaded').catch(() => {});
         await this.page.waitForTimeout(2000);
+        console.log(`RapiX Pay URL: ${this.page.url()}`);
     }
 
     /**

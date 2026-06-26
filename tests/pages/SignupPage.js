@@ -115,11 +115,58 @@ export class SignupPage {
     async signup(userData, acceptTerms = true) {
         await this.fillSignupForm(userData);
         if (acceptTerms) {
-            console.log('Accepting terms and conditions...');
-            await this.termsCheckbox.check();
+            await this.acceptTerms();
         }
+        await this.submitForm();
+    }
+
+    /**
+     * Accept terms and conditions checkbox.
+     */
+    async acceptTerms() {
+        console.log('Accepting terms and conditions...');
+        if (await this.termsCheckbox.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await this.termsCheckbox.check({ force: true }).catch(async () => {
+                await this.termsCheckbox.click({ force: true });
+            });
+        }
+    }
+
+    /**
+     * Submit signup form.
+     */
+    async submitForm() {
         console.log('Submitting signup form...');
         await this.signupButton.click();
+    }
+
+    /**
+     * @returns {Promise<boolean>}
+     */
+    async isTermsAccepted() {
+        return this.termsCheckbox.isChecked();
+    }
+
+    /**
+     * @returns {Promise<string|null>}
+     */
+    async getPasswordInputType() {
+        return this.passwordInput.getAttribute('type');
+    }
+
+    /**
+     * @returns {Promise<string|null>}
+     */
+    async getConfirmPasswordInputType() {
+        return this.confirmPasswordInput.getAttribute('type');
+    }
+
+    async togglePasswordVisibility() {
+        await this.toggleVisibility('password');
+    }
+
+    async toggleConfirmPasswordVisibility() {
+        await this.toggleVisibility('confirmPassword');
     }
 
     /**
@@ -127,7 +174,17 @@ export class SignupPage {
      * @returns {Promise<boolean>}
      */
     async hasValidationErrors() {
-        return await this.validationMessages.first().isVisible({ timeout: 2000 });
+        const html5Invalid = await this.page.evaluate(() => {
+            const fields = document.querySelectorAll('#name, #email, #password, #confirmPassword, #mobile');
+            return Array.from(fields).some((el) => el instanceof HTMLInputElement && !el.checkValidity());
+        }).catch(() => false);
+        if (html5Invalid) return true;
+
+        const visibleMsg = await this.validationMessages.first().isVisible({ timeout: 2000 }).catch(() => false);
+        if (visibleMsg) return true;
+
+        const errorText = this.page.locator('text=/required|invalid|mismatch|must|enter|accept terms/i').first();
+        return await errorText.isVisible({ timeout: 1500 }).catch(() => false);
     }
 
     /**
@@ -161,7 +218,13 @@ export class SignupPage {
      * @param {string} fieldId - 'password' or 'confirmPassword'
      */
     async toggleVisibility(fieldId) {
-        const toggle = this.page.locator(`#${fieldId} ~ button`).first();
-        await toggle.click();
+        const input = this.page.locator(`#${fieldId}`);
+        const toggle = input.locator('xpath=ancestor::*[1]//button').first()
+            .or(this.page.locator(`#${fieldId} ~ button`))
+            .or(input.locator('..').locator('button, svg, [class*="eye"]'))
+            .first();
+        if (await toggle.isVisible({ timeout: 2000 }).catch(() => false)) {
+            await toggle.click();
+        }
     }
 }

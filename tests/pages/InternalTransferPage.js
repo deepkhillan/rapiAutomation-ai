@@ -1,0 +1,151 @@
+import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
+
+/**
+ * Internal Transfer flow:
+ * - Crypto: Wallets → Crypto Wallet tab → Internal Transfer → email + amount → Send [coin] → Continue → PIN → success.
+ * - Fiat:   Wallets → Fiat Wallet tab → Internal Transfer → email + amount → Send [coin name] → Continue → PIN → success.
+ */
+
+export class InternalTransferPage {
+    constructor(page) {
+        this.page = page;
+        // Navigation: Wallets sidebar
+        this.walletsSidebarLink = page.locator('a:has-text("Wallets"), a:has-text("Wallet")').first();
+        // Wallets page main tabs (Crypto Wallet | Fiat Wallet)
+        this.cryptoWalletTab = page.locator('button:has-text("Crypto Wallet"), [role="tab"]:has-text("Crypto Wallet"), .tab:has-text("Crypto Wallet")').first();
+        this.fiatWalletTab = page.locator('button:has-text("Fiat Wallet"), [role="tab"]:has-text("Fiat Wallet"), .tab:has-text("Fiat Wallet")').first();
+        // Internal Transfer: tab or button (e.g. in table row – "Internal Transfer" button per currency)
+        this.internalTransferTab = page.locator('button:has-text("Internal Transfer"), [role="tab"]:has-text("Internal Transfer"), .tab:has-text("Internal Transfer"), a:has-text("Internal Transfer")').first();
+        this.internalTransferButton = page.locator('button:has-text("Internal Transfer")').first();
+        // Form – email (placeholder "Enter Email Address") and amount
+        this.emailInput = page.locator('input[placeholder*="Email Address"], input[type="email"], input[placeholder*="email"], input[name="email"], input[id*="email"]').first();
+        this.amountInput = page.locator('input[type="number"], input[placeholder*="amount"], input[placeholder*="Amount"]').first();
+        // Internal Transfer submit – use //button[@type='submit'] to click the button while internal transfer
+        this.transferOrSendButton = page.locator('//button[@type="submit"]').first();
+        // Review / confirmation: Continue button (span with text "Continue" in review modal)
+        this.continueButton = page.locator("//span[normalize-space()='Continue']").first();
+        // PIN approval (after Continue): transaction PIN to approve
+        this.pinInputs = page.locator('input[type="text"], input[type="tel"], input[type="password"]').filter({ visible: true });
+        this.pinSubmitButton = page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Confirm"), button:has-text("Approve")').first();
+        // Success
+        this.successMessage = page.locator('text=/success|completed|transfer successful|order completed/i').first();
+        this.successPopup = page.locator('text=/successfully|completed|transfer complete/i').first();
+    }
+
+    async gotoWallets() {
+        const url = await navigateToFeature(this.page, APP_ROUTES.wallets);
+        if (!APP_ROUTES.wallets.urlPattern.test(url)) {
+            await this.walletsSidebarLink.click({ timeout: 15000 });
+        }
+        await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+        await this.page.waitForTimeout(2000);
+    }
+
+    /** Go to Wallets then Crypto Wallet tab, then open Internal Transfer (tab or first button). */
+    async gotoInternalTransfer() {
+        await this.gotoWallets();
+        await this.page.waitForLoadState('networkidle').catch(() => {});
+        await this.page.waitForTimeout(2000);
+        if (await this.cryptoWalletTab.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.cryptoWalletTab.click();
+            await this.page.waitForTimeout(1500);
+        }
+        if (await this.internalTransferTab.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await this.internalTransferTab.click();
+        } else if (await this.internalTransferButton.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await this.internalTransferButton.click();
+        }
+        await this.page.waitForLoadState('networkidle').catch(() => {});
+        await this.page.waitForTimeout(2000);
+    }
+
+    /** Go to Wallets → Fiat Wallet tab → Internal Transfer (button in table, e.g. USD row), then form opens. */
+    async gotoFiatInternalTransfer() {
+        await this.gotoWallets();
+        await this.fiatWalletTab.waitFor({ state: 'visible', timeout: 8000 });
+        await this.fiatWalletTab.click();
+        await this.page.waitForTimeout(2000);
+        if (await this.internalTransferButton.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.internalTransferButton.click();
+        } else if (await this.internalTransferTab.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await this.internalTransferTab.click();
+        }
+        await this.page.waitForLoadState('networkidle').catch(() => {});
+        await this.page.waitForTimeout(2000);
+    }
+
+    /** Fill email and amount, then click submit (//button[@type='submit']). Crypto flow uses gotoInternalTransfer first. */
+    async fillAndSubmitCrypto(email, amount = '0.1') {
+        if (await this.emailInput.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.emailInput.fill(email);
+        }
+        if (await this.amountInput.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.amountInput.fill(amount);
+        }
+        await this.page.waitForTimeout(800);
+        await this.transferOrSendButton.click();
+        await this.page.waitForTimeout(2000);
+    }
+
+    /** Fiat: goto Fiat Wallet → Internal Transfer, then enter email and amount, click submit (//button[@type='submit']). */
+    async fillAndSubmitFiat(email, amount = '10') {
+        await this.gotoFiatInternalTransfer();
+        if (await this.emailInput.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.emailInput.fill(email);
+        }
+        if (await this.amountInput.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await this.amountInput.fill(amount);
+        }
+        await this.page.waitForTimeout(800);
+        await this.transferOrSendButton.click();
+        await this.page.waitForTimeout(2000);
+    }
+
+    /** After Send: wait 2 seconds for popup, then click Continue on review/confirmation popup. */
+    async clickContinueOnReview() {
+        await this.page.waitForTimeout(2000);
+        await this.continueButton.waitFor({ state: 'visible', timeout: 15000 });
+        await this.continueButton.scrollIntoViewIfNeeded();
+        await this.continueButton.click();
+        await this.page.waitForTimeout(3000);
+    }
+
+    /** Enter PIN (e.g. 111111) to approve the transaction, then submit. */
+    async enterPinToApprove(pin = '111111') {
+        await this.page.waitForTimeout(2000);
+        const pinFields = await this.page.locator('input[type="text"], input[type="tel"], input[type="password"]').filter({ visible: true }).all();
+        const targets = [];
+        for (const f of pinFields) {
+            const id = (await f.getAttribute('id') || '').toLowerCase();
+            const name = (await f.getAttribute('name') || '').toLowerCase();
+            if (!id.includes('email') && !id.includes('password') && !name.includes('email') && !name.includes('password')) {
+                targets.push(f);
+            }
+        }
+        if (targets.length >= 1) {
+            if (targets.length === 1) {
+                await targets[0].fill(pin);
+            } else {
+                for (let i = 0; i < Math.min(pin.length, targets.length); i++) {
+                    await targets[i].focus();
+                    await targets[i].fill(pin[i]);
+                    await this.page.waitForTimeout(200);
+                }
+            }
+            await this.page.waitForTimeout(1000);
+            const submitBtn = this.page.locator('button:has-text("Verify"), button:has-text("Submit"), button:has-text("Confirm"), button:has-text("Approve")').filter({ visible: true }).first();
+            if (await submitBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+                await submitBtn.click();
+            } else {
+                await this.page.keyboard.press('Enter');
+            }
+            await this.page.waitForTimeout(3000);
+        }
+    }
+
+    /** Check that order is completed (success message visible). */
+    async expectOrderCompleted(timeoutMs = 15000) {
+        const success = this.successMessage.or(this.successPopup);
+        await success.waitFor({ state: 'visible', timeout: timeoutMs });
+    }
+}

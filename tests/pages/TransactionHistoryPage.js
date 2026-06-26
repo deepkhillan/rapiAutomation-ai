@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
 
 export class TransactionHistoryPage {
     constructor(page) {
@@ -12,8 +13,13 @@ export class TransactionHistoryPage {
 
     async goto() {
         console.log('Navigating to Transaction History...');
-        await this.sidebarLink.click();
-        await this.page.waitForLoadState('networkidle');
+        const url = await navigateToFeature(this.page, APP_ROUTES.transactionHistory);
+        if (!APP_ROUTES.transactionHistory.urlPattern.test(url)) {
+            await this.sidebarLink.click({ timeout: 15000 });
+        }
+        await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+        await this.page.waitForTimeout(2000);
+        console.log(`Transaction History URL: ${this.page.url()}`);
     }
 
     async switchToRapixPay() {
@@ -49,13 +55,14 @@ export class TransactionHistoryPage {
         const raw = await row.innerText();
         const cells = await row.locator('td').allTextContents();
         const normalized = cells.map(c => c.trim());
+        // Table structure: Date(0), Type(1), Coin(2), Amount(3), Price(4), Fee(5), Status(6)
         return {
             raw,
             cells: normalized,
             type: normalized.find(c => /buy|sell/i.test(c)) || normalized[1],
             coin: normalized.find(c => /^[A-Z]{2,10}$/.test(c)) || normalized[2],
-            amount: normalized[2] ?? normalized[3],
-            fee: normalized.find(c => /^\d*\.?\d+$/.test(c)),
+            amount: normalized[3] ?? normalized[4],
+            fee: normalized.length >= 6 ? normalized[5] : undefined,
             status: normalized.find(c => /pending|completed|failed|cancelled/i.test(c)) || normalized[normalized.length - 1],
             timestamp: normalized[0]
         };
@@ -69,6 +76,28 @@ export class TransactionHistoryPage {
     async getTransactionByIndex(index) {
         const row = this.historyTable.locator('tbody tr').nth(index);
         return row.innerText();
+    }
+
+    /**
+     * Get structured details for transaction at given row index (0 = latest)
+     * @param {number} index
+     * @returns {Promise<{ raw: string, cells: string[], type?: string, coin?: string, amount?: string, fee?: string, status?: string, timestamp?: string }>}
+     */
+    async getTransactionDetailsByIndex(index) {
+        const row = this.historyTable.locator('tbody tr').nth(index);
+        const raw = await row.innerText();
+        const cells = await row.locator('td').allTextContents();
+        const normalized = cells.map(c => c.trim());
+        return {
+            raw,
+            cells: normalized,
+            type: normalized.find(c => /buy|sell/i.test(c)) || normalized[1],
+            coin: normalized.find(c => /^[A-Z]{2,10}$/.test(c)) || normalized[2],
+            amount: normalized[3] ?? normalized[4],
+            fee: normalized.length >= 6 ? normalized[5] : undefined,
+            status: normalized.find(c => /pending|completed|failed|cancelled/i.test(c)) || normalized[normalized.length - 1],
+            timestamp: normalized[0]
+        };
     }
 
     /**
