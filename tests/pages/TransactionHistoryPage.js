@@ -1,10 +1,10 @@
 import { expect } from '@playwright/test';
-import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
+import { navigateToFeature, APP_ROUTES, clickAppNavLink } from '../utils/appNavigation.js';
 
 export class TransactionHistoryPage {
     constructor(page) {
         this.page = page;
-        this.sidebarLink = page.locator('a:has-text("Transaction History")').first();
+        this.sidebarLink = page.locator('a[href*="transaction-history" i], a:has-text("Transaction History")').first();
         this.rapixPayTab = page.locator('button, [role="tab"], div').filter({ hasText: /^RapiX Pay$/ }).first();
         this.masterHistoryButton = page.locator('button:has-text("Master Trxn History"), button:has-text("Master")').first();
         this.historyTable = page.locator('table').first();
@@ -15,7 +15,7 @@ export class TransactionHistoryPage {
         console.log('Navigating to Transaction History...');
         const url = await navigateToFeature(this.page, APP_ROUTES.transactionHistory);
         if (!APP_ROUTES.transactionHistory.urlPattern.test(url)) {
-            await this.sidebarLink.click({ timeout: 15000 });
+            await clickAppNavLink(this.page, APP_ROUTES.transactionHistory);
         }
         await this.page.waitForLoadState('domcontentloaded').catch(() => {});
         await this.page.waitForTimeout(2000);

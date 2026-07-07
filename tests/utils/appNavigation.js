@@ -3,6 +3,8 @@
  * Ensures the SPA is loaded on the app origin before clicking sidebar links or deep-linking.
  */
 
+import { refreshAuthIfNeeded } from './refreshAuth.js';
+
 /** @param {import('@playwright/test').Page} page */
 export async function isAppErrorPage(page) {
     if (await page.locator('button:has-text("Reload Page")').first().isVisible({ timeout: 1500 }).catch(() => false)) {
@@ -32,6 +34,36 @@ export async function recoverFromErrorShell(page) {
 }
 
 /** @param {import('@playwright/test').Page} page */
+async function safeWait(page, ms) {
+    if (page.isClosed()) return;
+    await page.waitForTimeout(ms).catch(() => {});
+}
+
+/** Click a sidebar/menu link by label or href fragment. */
+/** @param {import('@playwright/test').Page} page */
+export async function clickAppNavLink(page, { labels = [], hrefContains = [] } = {}) {
+    for (const fragment of hrefContains) {
+        const link = page.locator(`aside a[href*="${fragment}" i], nav a[href*="${fragment}" i], a[href*="${fragment}" i]`).first();
+        if (await link.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await link.scrollIntoViewIfNeeded().catch(() => {});
+            await link.click({ timeout: 15000 });
+            await safeWait(page, 2500);
+            return true;
+        }
+    }
+    for (const label of labels) {
+        const link = page.getByRole('link', { name: new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') }).first();
+        if (await link.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await link.scrollIntoViewIfNeeded().catch(() => {});
+            await link.click({ timeout: 15000 });
+            await safeWait(page, 2500);
+            return true;
+        }
+    }
+    return false;
+}
+
+/** @param {import('@playwright/test').Page} page */
 export async function ensureAuthenticatedApp(page, timeoutMs = 60000) {
     if (page.isClosed()) return;
 
@@ -43,20 +75,21 @@ export async function ensureAuthenticatedApp(page, timeoutMs = 60000) {
     const errorPage = await isAppErrorPage(page);
 
     if (onAppOrigin && navVisible && !errorPage && url !== 'about:blank') {
-        await page.waitForTimeout(500);
+        await safeWait(page, 500);
         return;
     }
 
     if (!url || url === 'about:blank' || !url.includes('rapixchange.com') || errorPage) {
         let lastError;
         for (let attempt = 0; attempt < 3; attempt++) {
+            if (page.isClosed()) return;
             try {
                 await page.goto('/', { waitUntil: 'domcontentloaded', timeout: timeoutMs });
                 lastError = null;
                 break;
             } catch (e) {
                 lastError = e;
-                await page.waitForTimeout(2000 * (attempt + 1));
+                await safeWait(page, 2000 * (attempt + 1));
             }
         }
         if (lastError) throw lastError;
@@ -82,9 +115,7 @@ export async function ensureAuthenticatedApp(page, timeoutMs = 60000) {
         'nav a, aside a, [class*="sidebar" i] a, [class*="Sidebar"] a, [class*="nav" i] a, a[href*="wallet"], a[href*="buy"]',
     ).first();
     await navReady.waitFor({ state: 'visible', timeout: 30000 }).catch(() => {});
-    if (!page.isClosed()) {
-        await page.waitForTimeout(1500);
-    }
+    await safeWait(page, 1500);
 }
 
 /**
@@ -94,6 +125,7 @@ export async function ensureAuthenticatedApp(page, timeoutMs = 60000) {
 export async function navigateToFeature(page, options = {}) {
     const { paths = [], labels = [], hrefContains = [], urlPattern, preferSidebar = false } = options;
     await ensureAuthenticatedApp(page);
+    await refreshAuthIfNeeded(page);
 
     const matchesTarget = (currentUrl) => {
         if (urlPattern?.test(currentUrl)) return true;
@@ -109,51 +141,39 @@ export async function navigateToFeature(page, options = {}) {
         return matchesTarget(page.url());
     };
 
-    const clickSidebarLinks = async () => {
-        for (const fragment of hrefContains) {
-            const link = page.locator(`a[href*="${fragment}" i]`).first();
-            if (await link.isVisible({ timeout: 4000 }).catch(() => false)) {
-                await link.click();
-                await page.waitForTimeout(3000);
-                if (await isValidDestination()) return true;
-            }
-        }
-
-        for (const label of labels) {
-            const link = page.getByRole('link', { name: new RegExp(label, 'i') })
-                .or(page.locator(`a:has-text("${label}")`))
-                .or(page.locator(`.nav-link:has-text("${label}")`))
-                .first();
-            if (await link.isVisible({ timeout: 4000 }).catch(() => false)) {
-                await link.click();
-                await page.waitForTimeout(3000);
-                if (await isValidDestination()) return true;
-            }
-        }
-        return false;
-    };
-
     const tryDirectPaths = async () => {
         for (const path of paths) {
+            if (page.isClosed()) return false;
             await page.goto(path, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
             await page.waitForLoadState('domcontentloaded').catch(() => {});
-            await page.waitForTimeout(2000);
+            await safeWait(page, 2000);
             if (await isValidDestination()) return true;
             if (await isAppErrorPage(page)) {
-                console.log(`Direct navigation to ${path} hit error page – returning to home`);
-                await page.goto('/', { waitUntil: 'domcontentloaded' }).catch(() => {});
-                await page.waitForTimeout(1500);
+                console.log(`Direct navigation to ${path} hit error page – trying sidebar`);
+                await recoverFromErrorShell(page).catch(() => {});
+                await ensureAuthenticatedApp(page);
             }
         }
         return false;
     };
 
-    if (preferSidebar) {
-        if (await clickSidebarLinks()) return page.url();
+    const trySidebar = async () => {
+        if (await clickAppNavLink(page, { labels, hrefContains })) {
+            if (await isValidDestination()) return true;
+        }
+        return false;
+    };
+
+    // Prefer direct SPA routes on UAT (reliable); sidebar as fallback.
+    if (paths.length > 0) {
+        if (await tryDirectPaths()) return page.url();
+        if (await trySidebar()) return page.url();
+    } else if (preferSidebar) {
+        if (await trySidebar()) return page.url();
         await tryDirectPaths();
     } else {
+        if (await trySidebar()) return page.url();
         await tryDirectPaths();
-        await clickSidebarLinks();
     }
 
     return page.url();
@@ -168,10 +188,9 @@ export const APP_ROUTES = {
         preferSidebar: true,
     },
     buysell: {
-        // Direct /buy-sell often shows "Oops" on UAT – navigate via sidebar (client-side routing) first.
-        paths: [],
+        paths: ['/buysell'],
         labels: ['Buy/Sell', 'Buy Sell'],
-        hrefContains: ['buy-sell', 'buysell', 'exchange'],
+        hrefContains: ['buysell', 'buy-sell'],
         urlPattern: /buy-sell|buysell|exchange/i,
         preferSidebar: true,
     },
@@ -190,10 +209,10 @@ export const APP_ROUTES = {
         preferSidebar: true,
     },
     transactionHistory: {
-        paths: ['/history', '/transaction-history', '/transactions'],
-        labels: ['Transaction History', 'History'],
-        hrefContains: ['history', 'transaction-history'],
-        urlPattern: /history|transaction-history|transactions/i,
+        paths: ['/transaction-history'],
+        labels: ['Transaction History'],
+        hrefContains: ['transaction-history'],
+        urlPattern: /transaction-history/i,
         preferSidebar: true,
     },
 };

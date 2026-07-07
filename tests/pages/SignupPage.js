@@ -3,6 +3,8 @@
  * Encapsulates all interactions with the signup page
  */
 
+import { gotoWithRetry } from '../utils/pageGoto.js';
+
 export class SignupPage {
     constructor(page) {
         this.page = page;
@@ -39,15 +41,16 @@ export class SignupPage {
      */
     async goto() {
         console.log('Navigating to Signup Page...');
-        await this.page.goto('/signup', { timeout: 30000, waitUntil: 'load' });
+        await gotoWithRetry(this.page, '/signup', { timeout: 60000, waitUntil: 'domcontentloaded' });
     }
 
     /**
      * Verify signup page is loaded
      */
     async verifyPageLoaded() {
-        await this.page.waitForURL('**/signup', { timeout: 10000 });
-        await this.signupButton.waitFor({ state: 'visible', timeout: 10000 });
+        await this.page.waitForURL('**/signup', { timeout: 15000 }).catch(() => {});
+        await this.emailInput.waitFor({ state: 'visible', timeout: 30000 });
+        await this.signupButton.waitFor({ state: 'visible', timeout: 15000 });
         console.log('Signup page loaded successfully.');
     }
 

@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { gotoWithRetry } from '../utils/pageGoto.js';
 
 /**
  * Login Page Object Model
@@ -55,7 +56,7 @@ export class LoginPage {
      */
     async goto() {
         console.log('Navigating to Login Page...');
-        await this.page.goto('/login', { timeout: 60000, waitUntil: 'domcontentloaded' });
+        await gotoWithRetry(this.page, '/login', { timeout: 60000, waitUntil: 'domcontentloaded' });
         await this.waitForLoginForm();
     }
 

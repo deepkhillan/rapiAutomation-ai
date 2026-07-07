@@ -117,11 +117,11 @@ export class BuySellPage {
 
     /** Opens the crypto asset picker modal (chooseAssetModal). */
     getYouPayAmount() {
-        return this.page.locator('div').filter({ hasText: 'You Pay' }).getByRole('spinbutton').first();
+        return this.youPaySection.locator('input.balanceInput, input[type="number"], [role="spinbutton"]').first();
     }
 
     getYouReceiveAmount() {
-        return this.page.locator('div').filter({ hasText: 'You Receive' }).getByRole('spinbutton').first();
+        return this.youReceiveSection.locator('input.balanceInput, input[type="number"], [role="spinbutton"]').first();
     }
 
     /** @deprecated use getYouPayAmount() */
@@ -229,9 +229,12 @@ export class BuySellPage {
     /** Safe amount entry – never uses Ctrl+A on the page. */
     async fillAmountInput(input, amount) {
         await this.clearPageSelection();
+        await this.dismissOpenModals();
+        await this.tradingPanel.scrollIntoViewIfNeeded().catch(() => {});
+        await this.page.locator('.buySellCard').first().scrollIntoViewIfNeeded().catch(() => {});
         await input.waitFor({ state: 'visible', timeout: 15000 });
-        await input.click({ timeout: 5000 });
-        await input.fill(String(amount));
+        await input.scrollIntoViewIfNeeded().catch(() => {});
+        await input.fill(String(amount), { force: true });
         await input.evaluate((el) => {
             el.dispatchEvent(new Event('input', { bubbles: true }));
             el.dispatchEvent(new Event('change', { bubbles: true }));

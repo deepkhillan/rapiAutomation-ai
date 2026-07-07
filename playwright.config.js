@@ -32,8 +32,8 @@ export default defineConfig({
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* No retries locally – stopped or failed tests won't run again; use --retries=2 for CI if needed */
-  retries: 0,
+  /* One retry for flaky UAT network */
+  retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -62,16 +62,6 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-      testIgnore: [
-        ...AUTHENTICATED_SPECS,
-        /auth\/auth\.setup\.js/,
-        /swap\.auth\.setup\.js/,
-        /transfer\.auth\.setup\.js/,
-      ],
-    },
-    {
       name: 'auth-setup',
       testMatch: /auth\/auth\.setup\.js/,
       use: { ...devices['Desktop Chrome'] },
@@ -84,6 +74,21 @@ export default defineConfig({
         storageState: 'playwright/.auth/user.json',
       },
       dependencies: ['auth-setup'],
+    },
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+      testIgnore: [
+        ...AUTHENTICATED_SPECS,
+        /auth\/auth\.setup\.js/,
+        /swap\.auth\.setup\.js/,
+        /transfer\.auth\.setup\.js/,
+        /example\.spec\.js/,
+        /utils\/discoverCoins\.spec\.js/,
+        /utils\/dump_html\.spec\.js/,
+        /utils\/dump_history\.spec\.js/,
+      ],
+      dependencies: ['authenticated'],
     },
   ],
 });

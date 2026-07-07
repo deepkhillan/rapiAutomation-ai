@@ -316,7 +316,7 @@ test.describe('Buy/Sell – Positive & Negative (focused)', () => {
             return;
         }
         // App may allow click; then we expect no success toast (validation on submit or modal)
-        await actionBtn.click().catch(() => {});
+        await actionBtn.click({ timeout: 5000 }).catch(() => {});
         await page.waitForTimeout(3000);
         const successToast = page.locator('[class*="toast"]:has-text("success"), [class*="toast"]:has-text("Success"), .success-notification').first();
         const noSuccess = !(await successToast.isVisible({ timeout: 3000 }).catch(() => false));
@@ -345,7 +345,7 @@ test.describe('Buy/Sell – Positive & Negative (focused)', () => {
             return;
         }
         // App may allow click; then we expect no success toast
-        await actionBtn.click().catch(() => {});
+        await actionBtn.click({ timeout: 5000 }).catch(() => {});
         await page.waitForTimeout(3000);
         const successToast = page.locator('[class*="toast"]:has-text("success"), [class*="toast"]:has-text("Success"), .success-notification').first();
         const noSuccess = !(await successToast.isVisible({ timeout: 3000 }).catch(() => false));

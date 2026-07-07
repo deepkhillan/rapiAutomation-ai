@@ -107,6 +107,7 @@ test.describe('Signup - Phone Number Validation Refinement', () => {
         await page.waitForTimeout(1000);
 
         const hasErrors = await signupPage.hasValidationErrors();
-        expect(hasErrors).toBeFalsy();
+        const phoneFilled = (await signupPage.mobileNumberInput.inputValue()).length > 0;
+        expect(phoneFilled && !hasErrors).toBeTruthy();
     });
 });

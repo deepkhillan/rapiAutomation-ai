@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { navigateToFeature, APP_ROUTES } from '../utils/appNavigation.js';
+import { navigateToFeature, APP_ROUTES, clickAppNavLink } from '../utils/appNavigation.js';
 
 export class WalletPage {
     constructor(page) {
@@ -15,7 +15,10 @@ export class WalletPage {
         console.log('Navigating to Wallets page...');
         const url = await navigateToFeature(this.page, APP_ROUTES.wallets);
         if (!APP_ROUTES.wallets.urlPattern.test(url)) {
-            await this.sidebarLink.click({ timeout: 15000 });
+            await clickAppNavLink(this.page, APP_ROUTES.wallets);
+        }
+        if (!APP_ROUTES.wallets.urlPattern.test(this.page.url())) {
+            await this.page.goto('/wallet', { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
         }
         await this.page.waitForLoadState('domcontentloaded').catch(() => {});
         await this.ensureCryptoWalletTab();

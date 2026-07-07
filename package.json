@@ -26,7 +26,8 @@
     "test:platform": "npm run test:url && npm run test:login && npm run test:signup && npm run test:phone && npm run test:features",
     "test:chromium": "playwright test --project=chromium",
     "test:headed:all": "playwright test --headed",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "report:platform": "node scripts/generatePlatformReport.cjs"
   },
   "keywords": [],
   "author": "",
