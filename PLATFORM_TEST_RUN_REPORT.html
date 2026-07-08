@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RapiXchange Platform Test Report</title>
+  <style>
+    @page { size: A4; margin: 18mm 15mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+      font-size: 11pt; color: #1a202c; background: #fff; line-height: 1.45;
+    }
+    .cover-header {
+      background: linear-gradient(135deg, #0c2340 0%, #1a4480 100%);
+      color: #fff; padding: 28px 36px 24px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .cover-header h1 { font-size: 22pt; font-weight: 700; letter-spacing: 0.5px; }
+    .cover-header .tagline { font-size: 10pt; opacity: 0.9; margin-top: 6px; }
+    .cover-header .doc-type { text-align: right; font-size: 9pt; opacity: 0.85; line-height: 1.6; }
+    .meta-grid {
+      display: grid; grid-template-columns: 160px 1fr 160px 1fr;
+      border: 1px solid #cbd5e1; border-top: none; font-size: 10pt;
+    }
+    .meta-grid div { padding: 8px 14px; border-bottom: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; }
+    .meta-grid div:nth-child(4n) { border-right: none; }
+    .meta-grid .label { background: #f8fafc; font-weight: 600; color: #475569; }
+    .content { padding: 28px 36px 40px; max-width: 1100px; margin: 0 auto; }
+    h2 { font-size: 14pt; color: #0c2340; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #1a4480; }
+    h3 { font-size: 11pt; color: #334155; margin: 16px 0 8px; }
+    .section-desc { color: #64748b; font-size: 9.5pt; margin-bottom: 14px; }
+    .stat-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+    .stat-box {
+      flex: 1; min-width: 100px; text-align: center; padding: 16px 10px;
+      border: 1px solid #e2e8f0; border-radius: 4px; background: #f8fafc;
+    }
+    .stat-box .num { font-size: 28pt; font-weight: 700; line-height: 1; }
+    .stat-box .lbl { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.5px; margin-top: 6px; color: #64748b; }
+    .stat-box.total .num { color: #1a4480; }
+    .stat-box.pass .num { color: #059669; }
+    .stat-box.fail .num { color: #dc2626; }
+    .stat-box.skip .num { color: #6b7280; }
+    .stat-box.flaky .num { color: #d97706; }
+    .narrative { margin: 16px 0; text-align: justify; color: #334155; font-size: 10.5pt; }
+    .critical-box {
+      border-left: 4px solid #dc2626; background: #fef2f2; padding: 14px 16px;
+      margin: 16px 0; font-size: 10pt; color: #7f1d1d;
+    }
+    .success-box {
+      border-left: 4px solid #059669; background: #ecfdf5; padding: 14px 16px;
+      margin: 16px 0; font-size: 10pt; color: #065f46;
+    }
+    .discoveries { margin: 16px 0 24px; }
+    .discoveries ul { margin: 8px 0 0 20px; font-size: 10pt; }
+    .discoveries li { margin-bottom: 5px; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 12px 0; }
+    .data-table th {
+      background: #1a4480; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600;
+    }
+    .data-table td { padding: 7px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .data-table tr:nth-child(even) { background: #f8fafc; }
+    .data-table tr.row-failed { background: #fef2f2; }
+    .data-table tr.row-flaky { background: #fffbeb; }
+    .center { text-align: center; }
+    .mono { font-family: Consolas, 'Courier New', monospace; font-size: 9pt; color: #1e40af; }
+    .notes { font-size: 9pt; color: #64748b; }
+    .result {
+      display: inline-block; padding: 2px 8px; border-radius: 3px;
+      font-size: 8pt; font-weight: 700; letter-spacing: 0.3px;
+    }
+    .result.pass { background: #d1fae5; color: #065f46; }
+    .result.fail { background: #fee2e2; color: #991b1b; }
+    .result.skip { background: #f1f5f9; color: #475569; }
+    .result.flaky { background: #fef3c7; color: #92400e; }
+    .result.unknown { background: #f1f5f9; color: #64748b; }
+    .findings-box {
+      background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 16px;
+      margin-top: 12px; font-size: 9.5pt;
+    }
+    .findings-box ul { margin: 6px 0 0 18px; }
+    .findings-box li { margin-bottom: 4px; }
+    .priority { font-weight: 700; font-size: 9pt; padding: 2px 6px; border-radius: 3px; }
+    .priority.p1 { background: #fee2e2; color: #991b1b; }
+    .priority.p2 { background: #fef3c7; color: #92400e; }
+    .page-section { margin-bottom: 32px; page-break-inside: avoid; }
+    .page-section:nth-child(n+4) { page-break-before: auto; }
+    .doc-footer {
+      margin-top: 40px; padding-top: 16px; border-top: 2px solid #e2e8f0;
+      text-align: center; font-size: 9pt; color: #94a3b8;
+    }
+    @media print {
+      body { font-size: 10pt; }
+      .cover-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .data-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-header">
+    <div>
+      <h1>RAPIXCHANGE PLATFORM</h1>
+      <div class="tagline">E2E Automation &nbsp;·&nbsp; UAT Environment &nbsp;·&nbsp; Playwright</div>
+    </div>
+    <div class="doc-type">
+      Test Execution Report<br>
+      Overall: <strong>FAIL</strong><br>
+      73% Pass Rate
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="label">Environment</div><div>UAT (Production-like)</div>
+    <div class="label">Base URL</div><div>https://uat-eks.rapixchange.com</div>
+    <div class="label">Auth Account</div><div>Antier1@yopmail.com (Test User)</div>
+    <div class="label">Report Date</div><div>8 July 2026 at 18:22 GMT+5:30</div>
+    <div class="label">Test Framework</div><div>Playwright 1.58</div>
+    <div class="label">Duration</div><div>3h 0m</div>
+    <div class="label">Test Approach</div><div>Browser E2E Automation (Headless Chromium)</div>
+    <div class="label">Total Tests</div><div>132 test cases across 12 modules</div>
+  </div>
+
+  <div class="content">
+
+    <section class="page-section">
+      <h2>1. Executive Summary</h2>
+      <div class="stat-row">
+        <div class="stat-box total"><div class="num">132</div><div class="lbl">TESTS EXECUTED</div></div>
+        <div class="stat-box pass"><div class="num">96</div><div class="lbl">PASSED</div></div>
+        <div class="stat-box fail"><div class="num">20</div><div class="lbl">FAILED</div></div>
+        <div class="stat-box skip"><div class="num">9</div><div class="lbl">SKIPPED</div></div>
+        <div class="stat-box flaky"><div class="num">7</div><div class="lbl">FLAKY</div></div>
+      </div>
+      <p class="narrative">
+        This test execution report covers the RapiXchange cryptocurrency exchange platform on the UAT environment.
+        Testing was conducted using Playwright browser automation across authenticated feature flows (Buy/Sell, Swap,
+        Internal Transfer, Deposit/Withdraw, RapiX Pay, Transaction History, Dashboard) and unauthenticated flows
+        (Login, Signup, URL verification). A single auth session is established once and reused for all post-login tests.
+      </p>
+      <div class="critical-box">
+        <strong>Critical Finding:</strong> 20 test case(s) failed on UAT (73% pass rate).
+        Overall status: <strong>FAIL</strong>.
+        Failed areas include Buy/Sell, Dashboard, RapiX Pay, Deposit/Withdraw, Internal Transfer.
+        These should be reviewed before sign-off.
+      </div>
+      <div class="discoveries">
+        <strong>Key Discoveries from this Run:</strong>
+        <ul><li><strong>96 PASSED</strong> of 132 tests executed successfully on UAT.</li><li><strong>20 FAILED</strong> — requires investigation before production release.</li><li><strong>7 FLAKY</strong> — passed on retry; indicates timing or environment instability.</li><li><strong>9 SKIPPED</strong> — conditional tests not run (OAuth, long regression, dependencies).</li><li><strong>Deposit/Withdraw:</strong> 6 failure(s) of 10 tests.</li><li><strong>Buy/Sell:</strong> 4 failure(s) of 8 tests.</li><li><strong>RapiX Pay:</strong> 3 failure(s) of 4 tests.</li><li><strong>Internal Transfer:</strong> 3 failure(s) of 9 tests.</li></ul>
+      </div>
+    </section>
+
+    <section class="page-section">
+        <h2>2. Auth Setup Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 1 tests &nbsp;|&nbsp; Pass rate: 100%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Sign in once for authenticated feature tests</td>
+          <td class="center">47s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>1/1</strong> test cases passed in this module.</li></ul></div>
+      </section><section class="page-section">
+        <h2>3. Login Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 42 tests &nbsp;|&nbsp; Pass rate: 88%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">TC-LN-01</td>
+          <td>Login with empty email and password</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-02</td>
+          <td>Login with invalid email format - missing @</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-03</td>
+          <td>Login with invalid email format - missing domain</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-04</td>
+          <td>Login with invalid email format - no username</td>
+          <td class="center">17s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-05</td>
+          <td>Login with unregistered email</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-06</td>
+          <td>Login with incorrect password</td>
+          <td class="center">16s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-07</td>
+          <td>Login with empty email field</td>
+          <td class="center">10s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-08</td>
+          <td>Login with empty password field</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-09</td>
+          <td>Login with SQL injection in email field</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-10</td>
+          <td>Login with SQL injection in password field</td>
+          <td class="center">10s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-11</td>
+          <td>Login with XSS attempt in email field</td>
+          <td class="center">10s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-12</td>
+          <td>Login with XSS attempt in password field</td>
+          <td class="center">23s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-13</td>
+          <td>Login with special characters in password</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-14</td>
+          <td>Login with very long email (boundary test)</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-15</td>
+          <td>Login with very long password (boundary test)</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-16</td>
+          <td>Login with email containing spaces</td>
+          <td class="center">15s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-17</td>
+          <td>Login with whitespace-only email</td>
+          <td class="center">23s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-18</td>
+          <td>Login with whitespace-only password</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-19</td>
+          <td>Multiple invalid emails test</td>
+          <td class="center">35s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-20</td>
+          <td>Login with wrong account type selection</td>
+          <td class="center">14s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-21</td>
+          <td>Rapid multiple login attempts</td>
+          <td class="center">14s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-22</td>
+          <td>Login with email in uppercase</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-flaky">
+          <td class="mono">TC-LN-23</td>
+          <td>Login with leading/trailing spaces in email</td>
+          <td class="center">11s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-24</td>
+          <td>Login with Unicode characters in email</td>
+          <td class="center">15s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LN-25</td>
+          <td>Login form submission without JavaScript</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-flaky">
+          <td class="mono">TC-LP-01</td>
+          <td>Login page loads successfully</td>
+          <td class="center">101s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-02</td>
+          <td>All login form elements are visible and interactive</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-flaky">
+          <td class="mono">TC-LP-03</td>
+          <td>Password visibility toggle functionality</td>
+          <td class="center">81s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-LP-04</td>
+          <td>Navigation to signup page from login</td>
+          <td class="center">122s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 120000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-05</td>
+          <td>Navigation to forgot password page</td>
+          <td class="center">27s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-06</td>
+          <td>Account type switching between User and Agent</td>
+          <td class="center">20s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-07</td>
+          <td>Email and password fields accept input</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-08</td>
+          <td>Login button is clickable</td>
+          <td class="center">20s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-LP-09</td>
+          <td>Google Sign In button is visible and clickable</td>
+          <td class="center">12s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-10</td>
+          <td>Passkey Login button is visible and clickable</td>
+          <td class="center">15s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-11</td>
+          <td>Form fields can be cleared and refilled</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-12</td>
+          <td>Login form maintains state during account type switch</td>
+          <td class="center">17s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-13</td>
+          <td>Forgot password link is accessible</td>
+          <td class="center">60s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-14</td>
+          <td>Signup link is accessible</td>
+          <td class="center">26s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-15</td>
+          <td>Login form accepts valid email format</td>
+          <td class="center">16s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-16</td>
+          <td>Successful login with valid User credentials</td>
+          <td class="center">25s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-LP-17</td>
+          <td>Successful login with valid Agent credentials</td>
+          <td class="center">12s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>37/42</strong> test cases passed in this module.</li><li><strong>3 flaky</strong> — passed on retry: TC-LN-23, TC-LP-01, TC-LP-03.</li><li><strong>1 failed</strong> — TC-LP-04.</li></ul></div>
+      </section><section class="page-section">
+        <h2>4. Signup Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 35 tests &nbsp;|&nbsp; Pass rate: 97%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">TC-SN-01</td>
+          <td>Submit form with all empty fields</td>
+          <td class="center">33s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-02</td>
+          <td>Submit with invalid email format - missing @</td>
+          <td class="center">33s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-03</td>
+          <td>Submit with invalid email format - missing domain</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-04</td>
+          <td>Submit with password mismatch</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-05</td>
+          <td>Submit without accepting terms and conditions</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-06</td>
+          <td>Submit with missing full name</td>
+          <td class="center">33s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-07</td>
+          <td>Submit with missing email</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-08</td>
+          <td>Submit with missing password</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-09</td>
+          <td>Submit with missing confirm password</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-10</td>
+          <td>Submit with missing mobile number</td>
+          <td class="center">17s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-11</td>
+          <td>Submit with invalid mobile number format - letters</td>
+          <td class="center">40s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-12</td>
+          <td>Submit with special characters in name field</td>
+          <td class="center">65s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-13</td>
+          <td>Submit with SQL injection in email field</td>
+          <td class="center">27s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-14</td>
+          <td>Submit with SQL injection in name field</td>
+          <td class="center">25s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-15</td>
+          <td>Submit with XSS attempt in email field</td>
+          <td class="center">20s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-16</td>
+          <td>Submit with XSS attempt in name field</td>
+          <td class="center">25s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-17</td>
+          <td>Submit with very long email (boundary test)</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-18</td>
+          <td>Submit with very long name (boundary test)</td>
+          <td class="center">21s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-19</td>
+          <td>Submit with whitespace-only name</td>
+          <td class="center">24s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-20</td>
+          <td>Submit with email containing spaces</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-21</td>
+          <td>Multiple invalid emails test</td>
+          <td class="center">46s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-SN-PH-01</td>
+          <td>Phone number too short (less than 10 digits)</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Error: expect(received).toBeTruthy()</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-PH-02</td>
+          <td>Phone number too long (more than 10 digits)</td>
+          <td class="center">18s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-PH-03</td>
+          <td>Phone number with leading zero</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-PH-04</td>
+          <td>Phone number with special characters (+, -, (, ))</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-PH-05</td>
+          <td>Phone number with spaces</td>
+          <td class="center">20s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SN-PH-06</td>
+          <td>Changing country code updates validation or mask</td>
+          <td class="center">26s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-01</td>
+          <td>Successful signup with valid User account data</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-03</td>
+          <td>Successful signup with optional referral code</td>
+          <td class="center">21s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-04</td>
+          <td>Password visibility toggle functionality</td>
+          <td class="center">17s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-05</td>
+          <td>Confirm password visibility toggle functionality</td>
+          <td class="center">16s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-06</td>
+          <td>Navigation to login page from signup</td>
+          <td class="center">19s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-08</td>
+          <td>Terms and conditions checkbox functionality</td>
+          <td class="center">17s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-09</td>
+          <td>All form fields are editable and accept input</td>
+          <td class="center">29s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SP-10</td>
+          <td>Signup form elements are visible and interactive</td>
+          <td class="center">22s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>34/35</strong> test cases passed in this module.</li><li><strong>1 failed</strong> — TC-SN-PH-01.</li></ul></div>
+      </section><section class="page-section">
+        <h2>5. Dashboard Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 3 tests &nbsp;|&nbsp; Pass rate: 0%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-flaky">
+          <td class="mono">TC-DASH-POS-01</td>
+          <td>After login, main app loads (not login page)</td>
+          <td class="center">31s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-flaky">
+          <td class="mono">TC-DASH-POS-02</td>
+          <td>Dashboard or home – balance/summary or main content visible</td>
+          <td class="center">24s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DASH-POS-03</td>
+          <td>Sidebar navigation links visible (Wallets, Buy/Sell, etc.)</td>
+          <td class="center">103s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 60000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>0/3</strong> test cases passed in this module.</li><li><strong>2 flaky</strong> — passed on retry: TC-DASH-POS-01, TC-DASH-POS-02.</li><li><strong>1 failed</strong> — TC-DASH-POS-03.</li></ul></div>
+      </section><section class="page-section">
+        <h2>6. Buy/Sell Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 8 tests &nbsp;|&nbsp; Pass rate: 25%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-skipped">
+          <td class="mono">—</td>
+          <td>Place BUY orders for all coins → then SELL orders for all coins (select from dropdown); report issues</td>
+          <td class="center">7s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-BS-NEG-01</td>
+          <td>Buy with amount below minimum – button disabled, validation shown, or no success on submit</td>
+          <td class="center">96s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-BS-NEG-02</td>
+          <td>Buy with empty amount – submit not possible, validation, or no success on submit</td>
+          <td class="center">146s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-BS-POS-01</td>
+          <td>Buy/Sell page loads and URL contains buysell</td>
+          <td class="center">68s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-flaky">
+          <td class="mono">TC-BS-POS-02</td>
+          <td>Buy tab is visible and clickable</td>
+          <td class="center">53s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-BS-POS-03</td>
+          <td>Sell tab is visible and clickable</td>
+          <td class="center">88s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-BS-POS-04</td>
+          <td>Exchange form (amount input or card) is visible on Buy</td>
+          <td class="center">124s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-NEG-07</td>
+          <td>Page refresh after order does not duplicate – single entry in history</td>
+          <td class="center">107s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>2/8</strong> test cases passed in this module.</li><li><strong>1 flaky</strong> — passed on retry: TC-BS-POS-02.</li><li><strong>4 failed</strong> — TC-NEG-07, TC-BS-POS-04, TC-BS-NEG-01, TC-BS-NEG-02.</li></ul></div>
+      </section><section class="page-section">
+        <h2>7. RapiX Pay Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 4 tests &nbsp;|&nbsp; Pass rate: 25%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-failed">
+          <td class="mono">TC-RP-01</td>
+          <td>Valid Rapix Pay Order Flow</td>
+          <td class="center">191s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 180000ms exceeded.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-RP-02</td>
+          <td>Negative - Negative orders</td>
+          <td class="center">142s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-RP-02</td>
+          <td>Negative - Zero orders</td>
+          <td class="center">184s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-RP-NEG-03</td>
+          <td>RapiX Pay – invalid recipient email shows validation</td>
+          <td class="center">94s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>1/4</strong> test cases passed in this module.</li><li><strong>3 failed</strong> — TC-RP-01, TC-RP-02, TC-RP-02.</li></ul></div>
+      </section><section class="page-section">
+        <h2>8. Transaction History Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 4 tests &nbsp;|&nbsp; Pass rate: 100%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">TC-TH-NEG-01</td>
+          <td>Transaction History – invalid filter (if filter exists) does not break page</td>
+          <td class="center">52s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TH-POS-01</td>
+          <td>Transaction History page loads and sidebar link works</td>
+          <td class="center">45s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TH-POS-02</td>
+          <td>Transaction History – table or content area visible</td>
+          <td class="center">33s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TH-POS-03</td>
+          <td>RapiX Pay tab (if present) is clickable</td>
+          <td class="center">65s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>4/4</strong> test cases passed in this module.</li></ul></div>
+      </section><section class="page-section">
+        <h2>9. Deposit/Withdraw Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 10 tests &nbsp;|&nbsp; Pass rate: 40%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">TC-DW-DEP-01</td>
+          <td>Deposit – Wallets page loads and deposit section visible</td>
+          <td class="center">54s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-DW-DEP-02</td>
+          <td>Deposit – BTC – deposit address/QR displayed</td>
+          <td class="center">40s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-DW-DEP-03</td>
+          <td>Deposit – ETH – deposit address/network displayed</td>
+          <td class="center">88s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-DEP-04</td>
+          <td>Deposit – USDT – address and network displayed</td>
+          <td class="center">127s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-DEP-05</td>
+          <td>Deposit – all supported coins – each shows deposit entry or address</td>
+          <td class="center">101s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-DW-NEG-WTH-01</td>
+          <td>Withdraw – insufficient balance shows validation</td>
+          <td class="center">35s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-NEG-WTH-03</td>
+          <td>Withdraw – invalid address format shows validation</td>
+          <td class="center">32s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Error: expect(received).toBeTruthy()</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-WTH-01</td>
+          <td>Withdraw – section/page accessible</td>
+          <td class="center">111s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-WTH-02</td>
+          <td>Withdraw – BTC – form has address and amount fields</td>
+          <td class="center">101s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-DW-WTH-03</td>
+          <td>Withdraw – ETH – form has address and amount fields</td>
+          <td class="center">96s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Test timeout of 90000ms exceeded.</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>4/10</strong> test cases passed in this module.</li><li><strong>6 failed</strong> — TC-DW-DEP-04, TC-DW-DEP-05, TC-DW-WTH-01, TC-DW-WTH-02, TC-DW-WTH-03, TC-DW-NEG-WTH-03.</li></ul></div>
+      </section><section class="page-section">
+        <h2>10. Internal Transfer Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 9 tests &nbsp;|&nbsp; Pass rate: 44%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">TC-TR-01</td>
+          <td>Internal Transfer – Fiat (USD) – page loads and form is available</td>
+          <td class="center">23s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TR-02</td>
+          <td>Internal Transfer – Crypto (BTC/ETH) – page loads and asset selection available</td>
+          <td class="center">21s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TR-03</td>
+          <td>Internal Transfer – transfer to user email (jot.antier@gmail.com)</td>
+          <td class="center">21s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-TR-E2E-CRYPTO</td>
+          <td>Internal Transfer – Crypto 0.1 – full flow, Continue, PIN 111111, order completed</td>
+          <td class="center">60s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-TR-E2E-FIAT</td>
+          <td>Internal Transfer – Fiat 10 – Fiat Wallet tab → Internal Transfer → Send USD, Continue, PIN, order completed</td>
+          <td class="center">37s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-TR-NEG-CRYPTO-01</td>
+          <td>Crypto transfer – insufficient balance shows validation</td>
+          <td class="center">63s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Error: expect(received).toBeTruthy()</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-TR-NEG-CRYPTO-03</td>
+          <td>Crypto transfer – invalid recipient email shows validation</td>
+          <td class="center">32s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-TR-NEG-FIAT-02</td>
+          <td>Fiat transfer – below minimum amount shows validation</td>
+          <td class="center">37s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">Error: expect(received).toBeTruthy()</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-TR-NEG-FIAT-03</td>
+          <td>Fiat transfer – invalid recipient email shows validation</td>
+          <td class="center">29s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>4/9</strong> test cases passed in this module.</li><li><strong>3 failed</strong> — TC-TR-E2E-CRYPTO, TC-TR-NEG-FIAT-02, TC-TR-NEG-CRYPTO-01.</li></ul></div>
+      </section><section class="page-section">
+        <h2>11. Swap Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 11 tests &nbsp;|&nbsp; Pass rate: 45%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Capture page after clicking You Pay asset dropdown</td>
+          <td class="center">79s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SW-01</td>
+          <td>Crypto Swap – tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap</td>
+          <td class="center">93s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-failed">
+          <td class="mono">TC-SW-02</td>
+          <td>Crypto Swap – full flow: default pair, click Continue, then verify Successfully Swap popup</td>
+          <td class="center">77s</td>
+          <td class="center"><span class="result fail">FAIL</span></td>
+          <td class="notes">TimeoutError: locator.waitFor: Timeout 20000ms exceeded.</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-SW-03</td>
+          <td>Crypto Swap – success popup shows &quot;successfully swap&quot; text to confirm order completed</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-SW-04</td>
+          <td>Swap page loads – Crypto Swap tab and You Pay / You Receive visible</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-SW-05</td>
+          <td>Crypto Swap – You Pay amount field accepts 0.005 and Swap button visible</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-SW-06</td>
+          <td>Insufficient balance – order not executed and validation message shown</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-skipped">
+          <td class="mono">TC-SW-07</td>
+          <td>Swap with default pair (BTC-USDT) – place order without opening asset dropdown</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result skip">SKIPPED</span></td>
+          <td class="notes">Test skipped (environment or dependency)</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SW-FIAT-NEG-01</td>
+          <td>Fiat Swap – zero amount does not execute (button disabled or validation)</td>
+          <td class="center">24s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SW-FIAT-POS-01</td>
+          <td>Fiat Swap tab is visible on Swap page</td>
+          <td class="center">20s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">TC-SW-FIAT-POS-02</td>
+          <td>Fiat Swap tab click – form or content area visible</td>
+          <td class="center">16s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>5/11</strong> test cases passed in this module.</li><li><strong>1 failed</strong> — TC-SW-02.</li></ul></div>
+      </section><section class="page-section">
+        <h2>12. URL Verification Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 1 tests &nbsp;|&nbsp; Pass rate: 100%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Verify UAT URL is being used</td>
+          <td class="center">13s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>1/1</strong> test cases passed in this module.</li></ul></div>
+      </section><section class="page-section">
+        <h2>13. Other Module Tests</h2>
+        <p class="section-desc">Base: https://uat-eks.rapixchange.com &nbsp;|&nbsp; Module coverage: 4 tests &nbsp;|&nbsp; Pass rate: 75%</p>
+        <table class="data-table">
+      <thead><tr>
+        <th style="width:12%">Test ID</th>
+        <th style="width:38%">Test Name</th>
+        <th style="width:10%">Duration</th>
+        <th style="width:10%">Result</th>
+        <th style="width:30%">Notes</th>
+      </tr></thead>
+      <tbody><tr class="row-flaky">
+          <td class="mono">—</td>
+          <td>Discover Rapix Pay UI</td>
+          <td class="center">57s</td>
+          <td class="center"><span class="result flaky">FLAKY</span></td>
+          <td class="notes">Passed on retry — investigate instability</td>
+        </tr><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Navigate to example.com</td>
+          <td class="center">1s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Simple RapiXchange navigation</td>
+          <td class="center">12s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr><tr class="row-passed">
+          <td class="mono">—</td>
+          <td>Simple test</td>
+          <td class="center">0s</td>
+          <td class="center"><span class="result pass">PASS</span></td>
+          <td class="notes">—</td>
+        </tr></tbody>
+    </table>
+        <div class="findings-box"><strong>Module Findings:</strong><ul><li><strong>3/4</strong> test cases passed in this module.</li><li><strong>1 flaky</strong> — passed on retry: Discover Rapix Pay UI.</li></ul></div>
+      </section>
+
+    <section class="page-section">
+      <h2>14. Module Coverage Summary</h2>
+      <table class="data-table">
+        <thead><tr>
+          <th>Module</th><th>Total</th><th>Passed</th><th>Failed</th>
+          <th>Skipped</th><th>Flaky</th><th>Pass Rate</th><th>Result</th>
+        </tr></thead>
+        <tbody><tr>
+        <td>Auth Setup</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">100%</td>
+        <td class="center"><span class="result pass">PASS</span></td>
+      </tr><tr>
+        <td>Buy/Sell</td>
+        <td class="center">8</td>
+        <td class="center">2</td>
+        <td class="center">4</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">25%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Dashboard</td>
+        <td class="center">3</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">2</td>
+        <td class="center">0%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Deposit/Withdraw</td>
+        <td class="center">10</td>
+        <td class="center">4</td>
+        <td class="center">6</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">40%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Internal Transfer</td>
+        <td class="center">9</td>
+        <td class="center">4</td>
+        <td class="center">3</td>
+        <td class="center">2</td>
+        <td class="center">0</td>
+        <td class="center">44%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Login</td>
+        <td class="center">42</td>
+        <td class="center">37</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">3</td>
+        <td class="center">88%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Other</td>
+        <td class="center">4</td>
+        <td class="center">3</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">75%</td>
+        <td class="center"><span class="result flaky">PARTIAL</span></td>
+      </tr><tr>
+        <td>RapiX Pay</td>
+        <td class="center">4</td>
+        <td class="center">1</td>
+        <td class="center">3</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">25%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Signup</td>
+        <td class="center">35</td>
+        <td class="center">34</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">97%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Swap</td>
+        <td class="center">11</td>
+        <td class="center">5</td>
+        <td class="center">1</td>
+        <td class="center">5</td>
+        <td class="center">0</td>
+        <td class="center">45%</td>
+        <td class="center"><span class="result fail">FAIL</span></td>
+      </tr><tr>
+        <td>Transaction History</td>
+        <td class="center">4</td>
+        <td class="center">4</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">100%</td>
+        <td class="center"><span class="result pass">PASS</span></td>
+      </tr><tr>
+        <td>URL Verification</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">100%</td>
+        <td class="center"><span class="result pass">PASS</span></td>
+      </tr></tbody>
+      </table>
+      <p class="section-desc" style="margin-top:12px">
+        Coverage Summary: PASS=96 | FAIL=20 | SKIPPED=9 | FLAKY=7
+      </p>
+    </section>
+
+    <section class="page-section">
+      <h2>15. Recommendations &amp; Action Items</h2>
+      <table class="data-table">
+        <thead><tr>
+          <th style="width:8%">Priority</th>
+          <th style="width:12%">Ref</th>
+          <th style="width:22%">Issue</th>
+          <th style="width:28%">Failure Detail</th>
+          <th style="width:20%">Recommendation</th>
+          <th style="width:10%">Owner</th>
+        </tr></thead>
+        <tbody><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-NEG-07</td>
+        <td>Page refresh after order does not duplicate – single entry in history</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-BS-POS-04</td>
+        <td>Exchange form (amount input or card) is visible on Buy</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-BS-NEG-01</td>
+        <td>Buy with amount below minimum – button disabled, validation shown, or no success</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-BS-NEG-02</td>
+        <td>Buy with empty amount – submit not possible, validation, or no success on submit</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DASH-POS-03</td>
+        <td>Sidebar navigation links visible (Wallets, Buy/Sell, etc.)</td>
+        <td>Test timeout of 60000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-RP-01</td>
+        <td>Valid Rapix Pay Order Flow</td>
+        <td>Test timeout of 180000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-RP-02</td>
+        <td>Negative - Zero orders</td>
+        <td>TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-RP-02</td>
+        <td>Negative - Negative orders</td>
+        <td>TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-DEP-04</td>
+        <td>Deposit – USDT – address and network displayed</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-DEP-05</td>
+        <td>Deposit – all supported coins – each shows deposit entry or address</td>
+        <td>Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-WTH-01</td>
+        <td>Withdraw – section/page accessible</td>
+        <td>Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-WTH-02</td>
+        <td>Withdraw – BTC – form has address and amount fields</td>
+        <td>Test timeout of 90000ms exceeded while running &quot;beforeEach&quot; hook.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-WTH-03</td>
+        <td>Withdraw – ETH – form has address and amount fields</td>
+        <td>Test timeout of 90000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p2">P2</span></td>
+        <td class="mono">TC-DW-NEG-WTH-03</td>
+        <td>Withdraw – invalid address format shows validation</td>
+        <td>Error: expect(received).toBeTruthy()</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr><tr>
+        <td class="center"><span class="priority p1">P1</span></td>
+        <td class="mono">TC-TR-E2E-CRYPTO</td>
+        <td>Internal Transfer – Crypto 0.1 – full flow, Continue, PIN 111111, order complete</td>
+        <td>TimeoutError: locator.click: Timeout 30000ms exceeded.</td>
+        <td>Investigate UAT behaviour and update automation locators or test data</td>
+        <td>QA / Automation</td>
+      </tr></tbody>
+      </table>
+    </section>
+
+    <div class="doc-footer">
+      Report generated by RapiXchange E2E Automation &nbsp;|&nbsp; 8 July 2026 at 18:22 GMT+5:30<br>
+      Confidential — For internal engineering and QA use only
+    </div>
+  </div>
+</body>
+</html>

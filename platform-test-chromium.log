@@ -1,0 +1,1919 @@
+﻿node.exe : npm warn Unknown env config "devdir". This will stop working in the next major version of npm.
+At C:\Program Files\nodejs\npx.ps1:29 char:3
++   & $NODE_EXE $NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...version of npm.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Running 132 tests using 1 worker
+
+[1A[2K(node:35064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+[1A[2K(node:35064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K[1/132] [auth-setup] ΓÇ║ tests\auth\auth.setup.js:14:6 ΓÇ║ Sign in once for authenticated feature tests
+[1A[2K[auth-setup] ΓÇ║ tests\auth\auth.setup.js:14:6 ΓÇ║ Sign in once for authenticated feature tests
+Navigating to Login Page...
+
+[1A[2KSelecting account type: User
+
+[1A[2KTab for User not found or already selected.
+
+[1A[2KEntering email: Antier1@yopmail.com
+
+[1A[2KClicking Login button...
+
+[1A[2KChecking for PIN input...
+
+[1A[2KFound 6 PIN input fields.
+
+[1A[2KEntering PIN: 111111
+
+[1A[2KPIN submitted. Waiting for redirect...
+
+
+
+[1A[2K(node:31280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:31280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[2/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:24:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ Place BUY orders for all coins ΓåÆ then SELL orders for all coins (select from dropdown); report issues
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:24:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ Place BUY orders for all coins ΓåÆ then SELL orders for all coins (select from dropdown); report issues
+--- Authenticated session (saved auth) ---
+
+[1A[2K--- Validate Buy/Sell locators ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2K--- Get crypto list from Buy/Sell dropdown + known coins ---
+
+[1A[2KDetecting available coins from chooseAssetModal...
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KFound coins in dropdown: BTC
+
+[1A[2KCoins to test: BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, USDC-BASE, USDT-ETH, XLM, XRP, XTZ
+
+[1A[2K
+--- PHASE 1: BUY orders for all coins (select from dropdown) ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] BTC: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2KSetting amount to pay (fiat): 15
+
+[1A[2KAmount entered.
+
+[1A[2KWaiting for action button to be clickable...
+
+[1A[2K  [BUY] ADA: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ADA (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] ALGO: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ALGO (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] AVAX: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: AVAX (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] BCH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: BCH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] DOGE: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: DOGE (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ETH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] LTC: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: LTC (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] NEAR: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: NEAR (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] POL: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: POL (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] SOL: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: SOL (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] TRX: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: TRX (buy)
+
+[1A[2K  [BUY] TRX-USDT: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: TRX-USDT (buy)
+
+[1A[2K  [BUY] UNI: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: UNI (buy)
+
+[1A[2K  [BUY] USDC-ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDC-ETH (buy)
+
+[1A[2K  [BUY] USDC-BASE: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDC-BASE (buy)
+
+[1A[2K  [BUY] USDT-ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDT-ETH (buy)
+
+[1A[2K  [BUY] XLM: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XLM (buy)
+
+[1A[2K  [BUY] XRP: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XRP (buy)
+
+[1A[2K  [BUY] XTZ: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XTZ (buy)
+
+[1A[2K
+--- PHASE 2: SELL orders for all coins (select from dropdown) ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2K
+========== BUY/SELL TEST REPORT ==========
+Report files: D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.md | D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.json
+Coins tested: 20 ΓÇö BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, USDC-BASE, USDT-ETH, XLM, XRP, XTZ
+BUY: 0/20 passed (0%)
+  BTC: FAIL ΓÇô locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*="navTab"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible[22m
+
+  ADA: FAIL ΓÇô locator.click: Timeout 8000ms exceeded.
+Call log:
+[2m  - waiting for locator('.chooseAssetModal, [role="dialog"].chooseAssetModal, .modal.chooseAssetModal').first().getByText('ADA', { exact: true }).first()[22m
+
+  ALGO: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  AVAX: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  BCH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  DOGE: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  ETH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  LTC: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  NEAR: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  POL: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  SOL: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  TRX: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  TRX-USDT: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  UNI: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDC-ETH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDC-BASE: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDT-ETH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XLM: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XRP: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XTZ: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+SELL: 0/20 passed (0%)
+Locators: 5/6 OK
+
+
+
+[1A[2K(node:30852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:30852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[3/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:24:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ Place BUY orders for all coins ΓåÆ then SELL orders for all coins (select from dropdown); report issues (retry #1)
+[1A[2K--- Authenticated session (saved auth) ---
+
+[1A[2K--- Validate Buy/Sell locators ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2K--- Get crypto list from Buy/Sell dropdown + known coins ---
+
+[1A[2KDetecting available coins from chooseAssetModal...
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KFound coins in dropdown: BTC
+
+[1A[2KCoins to test: BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, USDC-BASE, USDT-ETH, XLM, XRP, XTZ
+
+[1A[2K
+--- PHASE 1: BUY orders for all coins (select from dropdown) ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] BTC: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2KSetting amount to pay (fiat): 15
+
+[1A[2KAmount entered.
+
+[1A[2KWaiting for action button to be clickable...
+
+[1A[2K  [BUY] ADA: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ADA (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] ALGO: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ALGO (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] AVAX: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: AVAX (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] BCH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: BCH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] DOGE: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: DOGE (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: ETH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] LTC: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: LTC (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] NEAR: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: NEAR (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] POL: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: POL (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] SOL: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: SOL (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] TRX: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: TRX (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] TRX-USDT: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: TRX-USDT (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] UNI: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: UNI (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] USDC-ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDC-ETH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] USDC-BASE: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDC-BASE (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] USDT-ETH: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: USDT-ETH (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] XLM: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XLM (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] XRP: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XRP (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K  [BUY] XTZ: selecting from dropdown, amount 15 USD...
+
+[1A[2KSelecting coin: XTZ (buy)
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K
+--- PHASE 2: SELL orders for all coins (select from dropdown) ---
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Sell tab...
+
+[1A[2K  [SELL] BTC: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: BTC (sell)
+
+[1A[2KSwitching to Sell tab...
+
+[1A[2K  [SELL] ADA: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: ADA (sell)
+
+[1A[2KSwitching to Sell tab...
+
+[1A[2K  [SELL] ALGO: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: ALGO (sell)
+
+[1A[2KSwitching to Sell tab...
+
+[1A[2K  [SELL] AVAX: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: AVAX (sell)
+
+[1A[2K  [SELL] BCH: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: BCH (sell)
+
+[1A[2K  [SELL] DOGE: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: DOGE (sell)
+
+[1A[2K  [SELL] ETH: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: ETH (sell)
+
+[1A[2K  [SELL] LTC: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: LTC (sell)
+
+[1A[2K  [SELL] NEAR: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: NEAR (sell)
+
+[1A[2K  [SELL] POL: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: POL (sell)
+
+[1A[2K  [SELL] SOL: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: SOL (sell)
+
+[1A[2K  [SELL] TRX: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: TRX (sell)
+
+[1A[2K  [SELL] TRX-USDT: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: TRX-USDT (sell)
+
+[1A[2K  [SELL] UNI: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: UNI (sell)
+
+[1A[2K  [SELL] USDC-ETH: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: USDC-ETH (sell)
+
+[1A[2K  [SELL] USDC-BASE: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: USDC-BASE (sell)
+
+[1A[2K  [SELL] USDT-ETH: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: USDT-ETH (sell)
+
+[1A[2K  [SELL] XLM: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: XLM (sell)
+
+[1A[2K  [SELL] XRP: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: XRP (sell)
+
+[1A[2K  [SELL] XTZ: selecting from dropdown, receive 10 USD...
+
+[1A[2KSelecting coin: XTZ (sell)
+
+[1A[2K
+--- PHASE 3: Spot-check wallet (sample) ---
+
+[1A[2KLocator warnings: Submit button (not navTab)
+
+[1A[2K
+--- Buy/Sell all-coins flow finished ---
+
+[1A[2K
+========== BUY/SELL TEST REPORT ==========
+Report files: D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.md | D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.json
+Coins tested: 20 ΓÇö BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, USDC-BASE, USDT-ETH, XLM, XRP, XTZ
+BUY: 0/20 passed (0%)
+  BTC: FAIL ΓÇô locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*="navTab"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible[22m
+
+  ADA: FAIL ΓÇô locator.click: Timeout 8000ms exceeded.
+Call log:
+[2m  - waiting for locator('.chooseAssetModal, [role="dialog"].chooseAssetModal, .modal.chooseAssetModal').first().getByText('ADA', { exact: true }).first()[22m
+
+  ALGO: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  AVAX: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  BCH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  DOGE: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  ETH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  LTC: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  NEAR: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  POL: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  SOL: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  TRX: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  TRX-USDT: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  UNI: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  USDC-ETH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  USDC-BASE: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  USDT-ETH: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  XLM: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  XRP: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  XTZ: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+SELL: 0/20 passed (0%)
+  BTC: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  ADA: FAIL ΓÇô locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  ALGO: FAIL ΓÇô locator.click: Test timeout of 1800000ms exceeded.
+Call log:
+[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()[22m
+
+  AVAX: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  BCH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  DOGE: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  ETH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  LTC: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  NEAR: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  POL: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  SOL: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  TRX: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  TRX-USDT: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  UNI: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDC-ETH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDC-BASE: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  USDT-ETH: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XLM: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XRP: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+  XTZ: FAIL ΓÇô page.waitForTimeout: Target page, context or browser has been closed
+Locators: 5/6 OK
+
+[1A[2K  1) [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:24:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ Place BUY orders for all coins ΓåÆ then SELL orders for all coins (select from dropdown); report issues 
+
+    [31mTest timeout of 1800000ms exceeded.[39m
+
+    Error: Buy/Sell exchange UI not ready (URL: https://uat-eks.rapixchange.com/dashboard).
+
+       at pages\BuySellPage.js:81
+
+      79 |
+      80 |         if (!(await this.waitForExchangeReady(10000)) || await isAppErrorPage(this.page)) {
+    > 81 |             throw new Error(`Buy/Sell exchange UI not ready (URL: ${this.page.url()}).`);
+         |                   ^
+      82 |         }
+      83 |         await this.clearPageSelection();
+      84 |         console.log(`Current URL: ${this.page.url()}`);
+        at BuySellPage.goto (D:\rapiAutomation-ai\tests\pages\BuySellPage.js:81:19)
+        at D:\rapiAutomation-ai\tests\buysell\buysell.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: BUY_SELL_REPORT (text/plain) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    ========== BUY/SELL TEST REPORT ==========
+    Report files: D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.md | D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.json
+    Coins tested: 20 ΓÇö BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, U...
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #3: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    [31mTest timeout of 1800000ms exceeded.[39m
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated-retry1\error-context.md
+
+    attachment #4: BUY_SELL_REPORT (text/plain) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    ========== BUY/SELL TEST REPORT ==========
+    Report files: D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.md | D:\rapiAutomation-ai\tests\buysell\BUY_SELL_REGRESSION_REPORT.json
+    Coins tested: 20 ΓÇö BTC, ADA, ALGO, AVAX, BCH, DOGE, ETH, LTC, NEAR, POL, SOL, TRX, TRX-USDT, UNI, USDC-ETH, U...
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #5: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\buysell-buysell-Buy-Sell-ΓÇô-718f3-from-dropdown-report-issues-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:35456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:35456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[4/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:204:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ TC-NEG-07: Page refresh after order does not duplicate ΓÇô single entry in history
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:204:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ TC-NEG-07: Page refresh after order does not duplicate ΓÇô single entry in history
+Navigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2KCurrent transaction count in table: 1
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2KSetting amount to pay (fiat): 15
+
+[1A[2KAmount entered.
+
+[1A[2KWaiting for action button to be clickable...
+
+
+
+[1A[2K(node:25608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:25608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[5/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:204:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ TC-NEG-07: Page refresh after order does not duplicate ΓÇô single entry in history (retry #1)
+[1A[2KNavigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2KCurrent transaction count in table: 10
+
+[1A[2KNavigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2KSetting amount to pay (fiat): 15
+
+[1A[2KAmount entered.
+
+[1A[2KWaiting for action button to be clickable...
+
+[1A[2K  2) [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:204:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ TC-NEG-07: Page refresh after order does not duplicate ΓÇô single entry in history 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*="navTab"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible[22m
+
+
+       at pages\BuySellPage.js:262
+
+      260 |         await this.dismissOpenModals();
+      261 |
+    > 262 |         await this.actionButton.waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+          |                                 ^
+      263 |         if (this.page.isClosed()) return false;
+      264 |         let isEnabled = await this.actionButton.isEnabled().catch(() => false);
+      265 |         if (!isEnabled) {
+        at BuySellPage.submitOrder (D:\rapiAutomation-ai\tests\pages\BuySellPage.js:262:33)
+        at D:\rapiAutomation-ai\tests\buysell\buysell.spec.js:228:27
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*="navTab"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible[22m
+
+
+       at pages\BuySellPage.js:262
+
+      260 |         await this.dismissOpenModals();
+      261 |
+    > 262 |         await this.actionButton.waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+          |                                 ^
+      263 |         if (this.page.isClosed()) return false;
+      264 |         let isEnabled = await this.actionButton.isEnabled().catch(() => false);
+      265 |         if (!isEnabled) {
+        at BuySellPage.submitOrder (D:\rapiAutomation-ai\tests\pages\BuySellPage.js:262:33)
+        at D:\rapiAutomation-ai\tests\buysell\buysell.spec.js:228:27
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\buysell-buysell-Buy-Sell-ΓÇô-c015a-e-ΓÇô-single-entry-in-history-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:28396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:28396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[6/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:263:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-01: Buy/Sell page loads and URL contains buysell
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:263:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-01: Buy/Sell page loads and URL contains buysell
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2K[7/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:270:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-02: Buy tab is visible and clickable
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:270:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-02: Buy tab is visible and clickable
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2K[8/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:280:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-03: Sell tab is visible and clickable
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:280:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-03: Sell tab is visible and clickable
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2K[9/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:290:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-04: Exchange form (amount input or card) is visible on Buy
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:290:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-POS-04: Exchange form (amount input or card) is visible on Buy
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2K[10/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:301:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-NEG-01: Buy with amount below minimum ΓÇô button disabled, validation shown, or no success on submit
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:301:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-NEG-01: Buy with amount below minimum ΓÇô button disabled, validation shown, or no success on submit
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2KSetting amount to pay (fiat): 0.01
+
+[1A[2KAmount entered.
+
+[1A[2K[11/132] [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:326:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-NEG-02: Buy with empty amount ΓÇô submit not possible, validation, or no success on submit
+[1A[2K[authenticated] ΓÇ║ tests\buysell\buysell.spec.js:326:9 ΓÇ║ Buy/Sell ΓÇô Positive & Negative (focused) ΓÇ║ TC-BS-NEG-02: Buy with empty amount ΓÇô submit not possible, validation, or no success on submit
+Navigating to Buy/Sell page...
+
+[1A[2KCurrent URL: https://uat-eks.rapixchange.com/buysell
+
+[1A[2KSwitching to Buy tab...
+
+[1A[2KSelecting coin: BTC (buy)
+
+[1A[2KBTC already selected ΓÇö skipping dropdown.
+
+[1A[2K[12/132] [authenticated] ΓÇ║ tests\dashboard\dashboard.spec.js:15:9 ΓÇ║ Dashboard ΓÇô Positive ΓÇ║ TC-DASH-POS-01: After login, main app loads (not login page)
+[1A[2K[13/132] [authenticated] ΓÇ║ tests\dashboard\dashboard.spec.js:21:9 ΓÇ║ Dashboard ΓÇô Positive ΓÇ║ TC-DASH-POS-02: Dashboard or home ΓÇô balance/summary or main content visible
+[1A[2K[14/132] [authenticated] ΓÇ║ tests\dashboard\dashboard.spec.js:32:9 ΓÇ║ Dashboard ΓÇô Positive ΓÇ║ TC-DASH-POS-03: Sidebar navigation links visible (Wallets, Buy/Sell, etc.)
+[1A[2K[15/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:29:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-01: Valid Rapix Pay Order Flow
+[1A[2K[authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:29:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-01: Valid Rapix Pay Order Flow
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2KSwitching to Rapix Pay tab...
+
+[1A[2KCurrent transaction count in table: 1
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: 2 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+
+[1A[2K(node:29600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:29600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K[16/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:29:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-01: Valid Rapix Pay Order Flow (retry #1)
+[1A[2KNavigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2KSwitching to Rapix Pay tab...
+
+[1A[2KCurrent transaction count in table: 1
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: 2 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+[1A[2K  3) [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:29:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-01: Valid Rapix Pay Order Flow 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:44:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:44:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\rapixpay-rapixpay-Rapix-Pa-1d81c--Valid-Rapix-Pay-Order-Flow-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:7932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:7932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K[17/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Zero orders
+[1A[2K[authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Zero orders
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: 0 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+[1A[2K(node:33364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:33364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[18/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Zero orders (retry #1)
+[1A[2KNavigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: 0 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+[1A[2K  4) [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Zero orders 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:80:13
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:80:13
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\rapixpay-rapixpay-Rapix-Pa-858a9-P-02-Negative---Zero-orders-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:26176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:26176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[19/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Negative orders
+[1A[2K[authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Negative orders
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: -5 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+
+
+[1A[2K(node:35424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:35424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[20/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Negative orders (retry #1)
+[1A[2KNavigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2KGetting balance for ETH...
+
+[1A[2KAvailable balance for ETH: 0.83321085
+
+[1A[2KNavigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2KStarting Rapix Pay Send flow: -5 orders of 0.001 ETH to jot.antier@gmail.com
+
+[1A[2KClicking Continue...
+
+[1A[2K  5) [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Negative orders 
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:80:13
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.click: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('div, span, p').filter({ hasText: /^ETH$/ }).last()[22m
+
+
+       at pages\RapixPayPage.js:69
+
+      67 |             await this.page.waitForTimeout(1000);
+      68 |             const coinOption = this.page.locator(`div, span, p`).filter({ hasText: new RegExp(`^${coin}$`) }).last();
+    > 69 |             await coinOption.click();
+         |                              ^
+      70 |         }
+      71 |
+      72 |         // Enter number of orders (Specific requirement)
+        at RapixPayPage.placeSendOrder (D:\rapiAutomation-ai\tests\pages\RapixPayPage.js:69:30)
+        at D:\rapiAutomation-ai\tests\rapixpay\rapixpay.spec.js:80:13
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\rapixpay-rapixpay-Rapix-Pa-1013a--Negative---Negative-orders-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:16952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:16952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[21/132] [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:88:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-NEG-03: RapiX Pay ΓÇô invalid recipient email shows validation
+[1A[2K[authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:88:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-NEG-03: RapiX Pay ΓÇô invalid recipient email shows validation
+Navigating to Rapix Pay...
+
+[1A[2KRapiX Pay URL: https://uat-eks.rapixchange.com/rapix-pay
+
+[1A[2K[22/132] [authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:16:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-01: Transaction History page loads and sidebar link works
+[1A[2K[authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:16:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-01: Transaction History page loads and sidebar link works
+Navigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2K[23/132] [authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:26:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-02: Transaction History ΓÇô table or content area visible
+[1A[2K[authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:26:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-02: Transaction History ΓÇô table or content area visible
+Navigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2K[24/132] [authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:37:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-03: RapiX Pay tab (if present) is clickable
+[1A[2K[authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:37:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-POS-03: RapiX Pay tab (if present) is clickable
+Navigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2K[25/132] [authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:49:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-NEG-01: Transaction History ΓÇô invalid filter (if filter exists) does not break page
+[1A[2K[authenticated] ΓÇ║ tests\transaction_history\transaction_history.spec.js:49:9 ΓÇ║ Transaction History ΓÇô Positive & Negative ΓÇ║ TC-TH-NEG-01: Transaction History ΓÇô invalid filter (if filter exists) does not break page
+Navigating to Transaction History...
+
+[1A[2KTransaction History URL: https://uat-eks.rapixchange.com/transaction-history
+
+[1A[2K[26/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:20:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-01: Deposit ΓÇô Wallets page loads and deposit section visible
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:20:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-01: Deposit ΓÇô Wallets page loads and deposit section visible
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[27/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:33:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-02: Deposit ΓÇô BTC ΓÇô deposit address/QR displayed
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:33:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-02: Deposit ΓÇô BTC ΓÇô deposit address/QR displayed
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[28/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:54:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-03: Deposit ΓÇô ETH ΓÇô deposit address/network displayed
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:54:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-03: Deposit ΓÇô ETH ΓÇô deposit address/network displayed
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[29/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:73:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-04: Deposit ΓÇô USDT ΓÇô address and network displayed
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:73:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-04: Deposit ΓÇô USDT ΓÇô address and network displayed
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[30/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:92:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-05: Deposit ΓÇô all supported coins ΓÇô each shows deposit entry or address
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:92:9 ΓÇ║ Crypto Deposit ΓÇ║ TC-DW-DEP-05: Deposit ΓÇô all supported coins ΓÇô each shows deposit entry or address
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[31/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:121:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-01: Withdraw ΓÇô section/page accessible
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:121:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-01: Withdraw ΓÇô section/page accessible
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[32/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:133:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-02: Withdraw ΓÇô BTC ΓÇô form has address and amount fields
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:133:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-02: Withdraw ΓÇô BTC ΓÇô form has address and amount fields
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[33/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:154:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-03: Withdraw ΓÇô ETH ΓÇô form has address and amount fields
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:154:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-WTH-03: Withdraw ΓÇô ETH ΓÇô form has address and amount fields
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[34/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:175:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-01: Withdraw ΓÇô insufficient balance shows validation
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:175:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-01: Withdraw ΓÇô insufficient balance shows validation
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K[35/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:207:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-03: Withdraw ΓÇô invalid address format shows validation
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:207:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-03: Withdraw ΓÇô invalid address format shows validation
+Navigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+
+
+[1A[2K(node:20432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:20432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[36/132] [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:207:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-03: Withdraw ΓÇô invalid address format shows validation (retry #1)
+[1A[2KNavigating to Wallets page...
+
+[1A[2KWallets URL: https://uat-eks.rapixchange.com/wallet
+
+[1A[2K  6) [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:207:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-03: Withdraw ΓÇô invalid address format shows validation 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      229 |         const invalidMsg = page.locator('text=/invalid address|valid address|wrong format|invalid wallet/i').first();
+      230 |         const hasValidation = await invalidMsg.isVisible({ timeout: 4000 }).catch(() => false);
+    > 231 |         expect(hasValidation).toBeTruthy();
+          |                               ^
+      232 |     });
+      233 | });
+      234 |
+        at D:\rapiAutomation-ai\tests\transfer_swap\crypto_deposit_withdraw.spec.js:231:31
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      229 |         const invalidMsg = page.locator('text=/invalid address|valid address|wrong format|invalid wallet/i').first();
+      230 |         const hasValidation = await invalidMsg.isVisible({ timeout: 4000 }).catch(() => false);
+    > 231 |         expect(hasValidation).toBeTruthy();
+          |                               ^
+      232 |     });
+      233 | });
+      234 |
+        at D:\rapiAutomation-ai\tests\transfer_swap\crypto_deposit_withdraw.spec.js:231:31
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-crypto_depos-140dc-ess-format-shows-validation-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:11852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:11852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[37/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:30:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-E2E-CRYPTO: Internal Transfer ΓÇô Crypto 0.1 ΓÇô full flow, Continue, PIN 111111, order completed
+
+
+[1A[2K(node:19828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:19828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[38/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:30:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-E2E-CRYPTO: Internal Transfer ΓÇô Crypto 0.1 ΓÇô full flow, Continue, PIN 111111, order completed (retry #1)
+[1A[2K  7) [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:30:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-E2E-CRYPTO: Internal Transfer ΓÇô Crypto 0.1 ΓÇô full flow, Continue, PIN 111111, order completed 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('//span[normalize-space()=\'Continue\']').first() to be visible[22m
+
+
+       at pages\InternalTransferPage.js:121
+
+      119 |     async clickContinueOnReview() {
+      120 |         await this.page.waitForTimeout(2000);
+    > 121 |         await this.continueButton.waitFor({ state: 'visible', timeout: 15000 });
+          |                                   ^
+      122 |         await this.continueButton.scrollIntoViewIfNeeded();
+      123 |         await this.continueButton.click();
+      124 |         await this.page.waitForTimeout(3000);
+        at InternalTransferPage.clickContinueOnReview (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:121:35)
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('//span[normalize-space()=\'Continue\']').first() to be visible[22m
+
+
+       at pages\InternalTransferPage.js:121
+
+      119 |     async clickContinueOnReview() {
+      120 |         await this.page.waitForTimeout(2000);
+    > 121 |         await this.continueButton.waitFor({ state: 'visible', timeout: 15000 });
+          |                                   ^
+      122 |         await this.continueButton.scrollIntoViewIfNeeded();
+      123 |         await this.continueButton.click();
+      124 |         await this.page.waitForTimeout(3000);
+        at InternalTransferPage.clickContinueOnReview (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:121:35)
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-internal_tra-6c6e6--PIN-111111-order-completed-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:22304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:22304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[39/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:39:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-E2E-FIAT: Internal Transfer ΓÇô Fiat 10 ΓÇô Fiat Wallet tab ΓåÆ Internal Transfer ΓåÆ Send USD, Continue, PIN, order completed
+[1A[2K[40/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:47:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-01: Internal Transfer ΓÇô Fiat (USD) ΓÇô page loads and form is available
+[1A[2K[41/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:55:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-02: Internal Transfer ΓÇô Crypto (BTC/ETH) ΓÇô page loads and asset selection available
+
+[1A[2K(node:25012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:25012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[42/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:55:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-02: Internal Transfer ΓÇô Crypto (BTC/ETH) ΓÇô page loads and asset selection available (retry #1)
+[1A[2K  8) [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:55:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-02: Internal Transfer ΓÇô Crypto (BTC/ETH) ΓÇô page loads and asset selection available 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      57 |         const assetOrAmount = page.locator('input[type="number"], .coin-select, [class*="asset"], text=/BTC|ETH|coin|asset/i').first();
+      58 |         const hasForm = await assetOrAmount.isVisible({ timeout: 10000 }).catch(() => false);
+    > 59 |         expect(hasForm).toBeTruthy();
+         |                         ^
+      60 |     });
+      61 |
+      62 |     test('TC-TR-03: Internal Transfer ΓÇô transfer to user email (jot.antier@gmail.com)', async ({ page }) => {
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:59:25
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      57 |         const assetOrAmount = page.locator('input[type="number"], .coin-select, [class*="asset"], text=/BTC|ETH|coin|asset/i').first();
+      58 |         const hasForm = await assetOrAmount.isVisible({ timeout: 10000 }).catch(() => false);
+    > 59 |         expect(hasForm).toBeTruthy();
+         |                         ^
+      60 |     });
+      61 |
+      62 |     test('TC-TR-03: Internal Transfer ΓÇô transfer to user email (jot.antier@gmail.com)', async ({ page }) => {
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:59:25
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-internal_tra-90d00-d-asset-selection-available-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K(node:30920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+
+[1A[2K(node:30920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[43/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:62:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-03: Internal Transfer ΓÇô transfer to user email (jot.antier@gmail.com)
+[1A[2K[44/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:77:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-02: Fiat transfer ΓÇô below minimum amount shows validation
+[1A[2K(node:12268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:12268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[45/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:77:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-02: Fiat transfer ΓÇô below minimum amount shows validation (retry #1)
+[1A[2K  9) [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:77:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-02: Fiat transfer ΓÇô below minimum amount shows validation 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      89 |             const hasValidation = await minError.isVisible({ timeout: 3000 }).catch(() => false)
+      90 |                 || (await submitDisabled.isVisible({ timeout: 2000 }).catch(() => false) && !(await submitDisabled.isEnabled().catch(() => false)));
+    > 91 |             expect(hasValidation).toBeTruthy();
+         |                                   ^
+      92 |         } else {
+      93 |             test.skip();
+      94 |         }
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:91:35
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      89 |             const hasValidation = await minError.isVisible({ timeout: 3000 }).catch(() => false)
+      90 |                 || (await submitDisabled.isVisible({ timeout: 2000 }).catch(() => false) && !(await submitDisabled.isEnabled().catch(() => false)));
+    > 91 |             expect(hasValidation).toBeTruthy();
+         |                                   ^
+      92 |         } else {
+      93 |             test.skip();
+      94 |         }
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:91:35
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-internal_tra-d59b2-mum-amount-shows-validation-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K(node:33712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:33712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[46/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:97:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-03: Fiat transfer ΓÇô invalid recipient email shows validation
+[1A[2K(node:21444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+
+[1A[2K(node:21444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[47/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:97:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-03: Fiat transfer ΓÇô invalid recipient email shows validation (retry #1)
+[1A[2K  10) [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:97:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-03: Fiat transfer ΓÇô invalid recipient email shows validation 
+
+    Error: page.waitForTimeout: Target page, context or browser has been closed
+
+       at pages\InternalTransferPage.js:44
+
+      42 |         }
+      43 |         await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+    > 44 |         await this.page.waitForTimeout(2000);
+         |                         ^
+      45 |     }
+      46 |
+      47 |     /** Go to Wallets then Crypto Wallet tab, then open Internal Transfer (tab or first button). */
+        at InternalTransferPage.gotoWallets (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:44:25)
+        at InternalTransferPage.gotoInternalTransfer (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:49:9)
+        at goToInternalTransfer (D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:19:9)
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:98:9
+
+    attachment #1: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-850b7-ient-email-shows-validation-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: page.waitForTimeout: Target page, context or browser has been closed
+
+       at pages\InternalTransferPage.js:44
+
+      42 |         }
+      43 |         await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+    > 44 |         await this.page.waitForTimeout(2000);
+         |                         ^
+      45 |     }
+      46 |
+      47 |     /** Go to Wallets then Crypto Wallet tab, then open Internal Transfer (tab or first button). */
+        at InternalTransferPage.gotoWallets (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:44:25)
+        at InternalTransferPage.gotoInternalTransfer (D:\rapiAutomation-ai\tests\pages\InternalTransferPage.js:49:9)
+        at goToInternalTransfer (D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:19:9)
+        at D:\rapiAutomation-ai\tests\transfer_swap\internal_transfer.spec.js:98:9
+
+    attachment #1: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-850b7-ient-email-shows-validation-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-internal_tra-850b7-ient-email-shows-validation-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-internal_tra-850b7-ient-email-shows-validation-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+
+
+[1A[2K(node:28116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:28116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[48/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:115:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-CRYPTO-01: Crypto transfer ΓÇô insufficient balance shows validation
+[1A[2K[49/132] [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:138:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-CRYPTO-03: Crypto transfer ΓÇô invalid recipient email shows validation
+[1A[2K[50/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.discover.spec.js:13:9 ΓÇ║ Swap UI discovery ΓÇ║ Capture page after clicking You Pay asset dropdown
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.discover.spec.js:13:9 ΓÇ║ Swap UI discovery ΓÇ║ Capture page after clicking You Pay asset dropdown
+Navigating to Swap page (Swapping)...
+
+[1A[2KAfter click - dialog: [33mfalse[39m Choose text: [33mfalse[39m listbox: [33mfalse[39m
+
+[1A[2KSee test-results/swap-discover/after-click-you-pay.png and .html
+
+[1A[2K[51/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:23:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-01: Crypto Swap ΓÇô tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:23:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-01: Crypto Swap ΓÇô tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap
+Navigating to Swap page (Swapping)...
+
+[1A[2KSelecting You Pay asset: ETH
+
+[1A[2KYou Pay asset is "BTC" after attempting to select ETH
+
+[1A[2KSelecting You Receive asset: USDT
+
+[1A[2KSetting You Pay amount: 0.005
+
+[1A[2K[52/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup
+Navigating to Swap page (Swapping)...
+
+[1A[2KSelecting You Pay asset: ETH
+
+[1A[2KYou Pay asset is "BTC" after attempting to select ETH
+
+[1A[2KSelecting You Receive asset: USDT
+
+[1A[2KSetting You Pay amount: 0.005
+
+[1A[2K[53/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:51:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-03: Crypto Swap ΓÇô success popup shows "successfully swap" text to confirm order completed
+[1A[2K[54/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:66:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-04: Swap page loads ΓÇô Crypto Swap tab and You Pay / You Receive visible
+[1A[2K[55/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:83:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-05: Crypto Swap ΓÇô You Pay amount field accepts 0.005 and Swap button visible
+[1A[2K[56/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:97:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-06: Insufficient balance ΓÇô order not executed and validation message shown
+[1A[2K[57/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:115:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-07: Swap with default pair (BTC-USDT) ΓÇô place order without opening asset dropdown
+
+
+[1A[2K(node:22064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:22064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[58/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:23:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-01: Crypto Swap ΓÇô tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap (retry #1)
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:23:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-01: Crypto Swap ΓÇô tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap
+Navigating to Swap page (Swapping)...
+
+[1A[2KSelecting You Pay asset: ETH
+
+[1A[2KYou Pay asset is "BTC" after attempting to select ETH
+
+[1A[2KSelecting You Receive asset: USDT
+
+[1A[2KSetting You Pay amount: 0.005
+
+[1A[2K[59/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup (retry #1)
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup
+Navigating to Swap page (Swapping)...
+
+[1A[2KSelecting You Pay asset: ETH
+
+[1A[2KYou Pay asset is "BTC" after attempting to select ETH
+
+[1A[2KSelecting You Receive asset: USDT
+
+[1A[2KSetting You Pay amount: 0.005
+
+[1A[2K  11) [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup 
+
+    TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Continue' }).or(locator('button:has-text("Continue")')).first() to be visible[22m
+
+
+       at pages\SwapPage.js:325
+
+      323 |             .or(this.page.locator('button:has-text("Continue")'))
+      324 |             .first();
+    > 325 |         await continueBtn.waitFor({ state: 'visible', timeout: 20000 });
+          |                           ^
+      326 |         await continueBtn.scrollIntoViewIfNeeded();
+      327 |         await continueBtn.click({ force: true });
+      328 |         await this.page.waitForTimeout(2500);
+        at SwapPage.clickContinueInModal (D:\rapiAutomation-ai\tests\pages\SwapPage.js:325:27)
+        at SwapPage.performCryptoSwapEthToUsdt (D:\rapiAutomation-ai\tests\pages\SwapPage.js:357:20)
+        at D:\rapiAutomation-ai\tests\transfer_swap\swap.spec.js:46:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated\error-context.md
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Continue' }).or(locator('button:has-text("Continue")')).first() to be visible[22m
+
+
+       at pages\SwapPage.js:325
+
+      323 |             .or(this.page.locator('button:has-text("Continue")'))
+      324 |             .first();
+    > 325 |         await continueBtn.waitFor({ state: 'visible', timeout: 20000 });
+          |                           ^
+      326 |         await continueBtn.scrollIntoViewIfNeeded();
+      327 |         await continueBtn.click({ force: true });
+      328 |         await this.page.waitForTimeout(2500);
+        at SwapPage.clickContinueInModal (D:\rapiAutomation-ai\tests\pages\SwapPage.js:325:27)
+        at SwapPage.performCryptoSwapEthToUsdt (D:\rapiAutomation-ai\tests\pages\SwapPage.js:357:20)
+        at D:\rapiAutomation-ai\tests\transfer_swap\swap.spec.js:46:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated-retry1\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated-retry1\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\transfer_swap-swap-Swap-fe-706de-ify-Successfully-Swap-popup-authenticated-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[60/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:51:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-03: Crypto Swap ΓÇô success popup shows "successfully swap" text to confirm order completed (retry #1)
+[1A[2K[61/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:66:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-04: Swap page loads ΓÇô Crypto Swap tab and You Pay / You Receive visible (retry #1)
+[1A[2K[62/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:83:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-05: Crypto Swap ΓÇô You Pay amount field accepts 0.005 and Swap button visible (retry #1)
+[1A[2K[63/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:97:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-06: Insufficient balance ΓÇô order not executed and validation message shown (retry #1)
+[1A[2K[64/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:115:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-07: Swap with default pair (BTC-USDT) ΓÇô place order without opening asset dropdown (retry #1)
+
+
+[1A[2K(node:26684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:26684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K[65/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:130:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-POS-01: Fiat Swap tab is visible on Swap page
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:130:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-POS-01: Fiat Swap tab is visible on Swap page
+Navigating to Swap page (Swapping)...
+
+[1A[2K[66/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:138:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-POS-02: Fiat Swap tab click ΓÇô form or content area visible
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:138:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-POS-02: Fiat Swap tab click ΓÇô form or content area visible
+Navigating to Swap page (Swapping)...
+
+[1A[2K[67/132] [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:146:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-NEG-01: Fiat Swap ΓÇô zero amount does not execute (button disabled or validation)
+[1A[2K[authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:146:9 ΓÇ║ Swap feature ΓÇô Fiat Swap (positive & negative) ΓÇ║ TC-SW-FIAT-NEG-01: Fiat Swap ΓÇô zero amount does not execute (button disabled or validation)
+Navigating to Swap page (Swapping)...
+
+[1A[2K  11 failed
+    [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:24:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ Place BUY orders for all coins ΓåÆ then SELL orders for all coins (select from dropdown); report issues 
+    [authenticated] ΓÇ║ tests\buysell\buysell.spec.js:204:9 ΓÇ║ Buy/Sell ΓÇô All coins (login once, all BUYs then all SELLs, dropdown selection) ΓÇ║ TC-NEG-07: Page refresh after order does not duplicate ΓÇô single entry in history 
+    [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:29:9 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-01: Valid Rapix Pay Order Flow 
+    [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Zero orders 
+    [authenticated] ΓÇ║ tests\rapixpay\rapixpay.spec.js:75:13 ΓÇ║ Rapix Pay Automation - JavaScript POM ΓÇ║ TC-RP-02: Negative - Negative orders 
+    [authenticated] ΓÇ║ tests\transfer_swap\crypto_deposit_withdraw.spec.js:207:9 ΓÇ║ Crypto Withdraw ΓÇ║ TC-DW-NEG-WTH-03: Withdraw ΓÇô invalid address format shows validation 
+    [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:30:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-E2E-CRYPTO: Internal Transfer ΓÇô Crypto 0.1 ΓÇô full flow, Continue, PIN 111111, order completed 
+    [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:55:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-02: Internal Transfer ΓÇô Crypto (BTC/ETH) ΓÇô page loads and asset selection available 
+    [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:77:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-02: Fiat transfer ΓÇô below minimum amount shows validation 
+    [authenticated] ΓÇ║ tests\transfer_swap\internal_transfer.spec.js:97:9 ΓÇ║ Internal Transfer ΓÇ║ TC-TR-NEG-FIAT-03: Fiat transfer ΓÇô invalid recipient email shows validation 
+    [authenticated] ΓÇ║ tests\transfer_swap\swap.spec.js:44:9 ΓÇ║ Swap feature ΓÇô Crypto Swap ΓÇ║ TC-SW-02: Crypto Swap ΓÇô full flow: ETHΓåÆUSDT 0.005, click Continue, then verify Successfully Swap popup 
+  5 skipped
+  87 did not run
+  29 passed (2.1h)

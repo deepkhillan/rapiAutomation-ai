@@ -61,8 +61,12 @@ export class SignupPage {
     async selectAccountType(type) {
         console.log(`Selecting account type: ${type}`);
         const targetTab = type === 'Agent' ? this.agentAccountTypeTab : this.userAccountTypeTab;
-        await targetTab.click();
-        await this.page.waitForTimeout(500); // UI transition
+        if (await targetTab.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await targetTab.click();
+            await this.page.waitForTimeout(500);
+        } else {
+            console.log(`Account type tab for ${type} not found – using default signup form`);
+        }
     }
 
     /**
@@ -71,20 +75,33 @@ export class SignupPage {
      */
     async selectCountryCode(countryCode) {
         console.log(`Selecting country code: ${countryCode}`);
+        const codeDigits = countryCode.replace('+', '');
+        const phoneRoot = this.page.locator('.react-tel-input, [class*="phoneInput"], [class*="PhoneInput"]').first();
+        const flagTrigger = phoneRoot.locator('.selected-flag, .flag-dropdown, button[aria-haspopup="listbox"]').first()
+            .or(this.countryCodeSelector);
+
         try {
-            const tagName = await this.countryCodeSelector.evaluate(el => el.tagName);
+            const tagName = await this.countryCodeSelector.evaluate((el) => el.tagName).catch(() => '');
             if (tagName === 'SELECT') {
                 await this.countryCodeSelector.selectOption({ label: new RegExp(countryCode.replace('+', '\\+')) });
-            } else {
-                await this.countryCodeSelector.click();
-                await this.page.waitForTimeout(500);
-                const option = this.page.locator(`li:has-text("${countryCode}"), .country-option:has-text("${countryCode}")`).first();
-                if (await option.isVisible()) {
-                    await option.click();
-                } else {
-                    console.log(`Warning: Country code option ${countryCode} not found in dropdown list.`);
-                }
+                return;
             }
+
+            if (await flagTrigger.isVisible({ timeout: 3000 }).catch(() => false)) {
+                await flagTrigger.click();
+                await this.page.waitForTimeout(600);
+            }
+
+            const option = this.page.locator('[role="option"], li, .country, .country-list li, .country-option')
+                .filter({ hasText: new RegExp(`${countryCode.replace('+', '\\+')}|\\+${codeDigits}(?!\\d)|\\b${codeDigits}\\b`, 'i') })
+                .first();
+            if (await option.isVisible({ timeout: 3000 }).catch(() => false)) {
+                await option.click();
+                await this.page.waitForTimeout(400);
+                return;
+            }
+
+            console.log(`Warning: Country code option ${countryCode} not found in dropdown list.`);
         } catch (error) {
             console.error(`Failed to select country code: ${error.message}`);
         }

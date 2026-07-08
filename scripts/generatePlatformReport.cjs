@@ -21,17 +21,19 @@ function parseLog(text) {
         if (match) failed.push({ project: match[1], name: match[2].trim() });
     }
 
-    const totalMatch = clean.match(/Running (\d+) tests/);
-    const passedMatch = clean.match(/(\d+) passed(?: \(([^)]+)\))?/);
-    const failedMatch = clean.match(/(\d+) failed/);
-    const flakyMatch = clean.match(/(\d+) flaky/);
-    const didNotRunMatch = clean.match(/(\d+) did not run/);
+    const totalMatches = [...clean.matchAll(/Running (\d+) tests/g)];
+    const passedMatches = [...clean.matchAll(/(\d+) passed(?: \(([^)]+)\))?/g)];
+    const failedMatches = [...clean.matchAll(/(\d+) failed/g)];
+    const flakyMatches = [...clean.matchAll(/(\d+) flaky/g)];
+    const didNotRunMatches = [...clean.matchAll(/(\d+) did not run/g)];
 
-    const total = totalMatch ? Number(totalMatch[1]) : 137;
-    const passedCount = passedMatch ? Number(passedMatch[1]) : 0;
-    const failedCount = failedMatch ? Number(failedMatch[1]) : 0;
-    const flaky = flakyMatch ? Number(flakyMatch[1]) : 0;
-    const didNotRun = didNotRunMatch ? Number(didNotRunMatch[1]) : 0;
+    const total = totalMatches.length
+        ? totalMatches.reduce((sum, m) => sum + Number(m[1]), 0)
+        : 130;
+    const passedCount = passedMatches.reduce((sum, m) => sum + Number(m[1]), 0);
+    const failedCount = failedMatches.reduce((sum, m) => sum + Number(m[1]), 0);
+    const flaky = flakyMatches.reduce((sum, m) => sum + Number(m[1]), 0);
+    const didNotRun = didNotRunMatches.reduce((sum, m) => sum + Number(m[1]), 0);
 
     return {
         total,
@@ -39,7 +41,7 @@ function parseLog(text) {
         failedCount,
         flaky,
         didNotRun,
-        duration: passedMatch && passedMatch[2] ? passedMatch[2] : '—',
+        duration: passedMatches.map((m) => m[2] || '').filter(Boolean).join(' + ') || '—',
         failed,
     };
 }

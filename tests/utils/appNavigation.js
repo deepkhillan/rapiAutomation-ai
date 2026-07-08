@@ -3,8 +3,6 @@
  * Ensures the SPA is loaded on the app origin before clicking sidebar links or deep-linking.
  */
 
-import { refreshAuthIfNeeded } from './refreshAuth.js';
-
 /** @param {import('@playwright/test').Page} page */
 export async function isAppErrorPage(page) {
     if (await page.locator('button:has-text("Reload Page")').first().isVisible({ timeout: 1500 }).catch(() => false)) {
@@ -125,7 +123,6 @@ export async function ensureAuthenticatedApp(page, timeoutMs = 60000) {
 export async function navigateToFeature(page, options = {}) {
     const { paths = [], labels = [], hrefContains = [], urlPattern, preferSidebar = false } = options;
     await ensureAuthenticatedApp(page);
-    await refreshAuthIfNeeded(page);
 
     const matchesTarget = (currentUrl) => {
         if (urlPattern?.test(currentUrl)) return true;
@@ -172,8 +169,8 @@ export async function navigateToFeature(page, options = {}) {
         if (await trySidebar()) return page.url();
         await tryDirectPaths();
     } else {
+        if (await tryDirectPaths()) return page.url();
         if (await trySidebar()) return page.url();
-        await tryDirectPaths();
     }
 
     return page.url();

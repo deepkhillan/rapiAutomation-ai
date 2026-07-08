@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
+    "test": "playwright test --project=auth-setup && playwright test --project=authenticated && playwright test --project=chromium",
+    "test:platform": "node scripts/runPlatformAndReport.cjs",
+    "test:platform:raw": "playwright test --project=auth-setup && playwright test --project=authenticated && playwright test --project=chromium",
+    "test:platform:legacy": "npm run test:url && npm run test:login && npm run test:signup && npm run test:phone && npm run test:features",
     "test:ui": "playwright test --ui",
     "test:signup": "playwright test tests/signup",
     "test:login": "playwright test tests/login",
@@ -23,11 +25,12 @@
     "test:history": "playwright test tests/transaction_history/transaction_history.spec.js --project=authenticated",
     "test:features": "playwright test --project=authenticated",
     "test:post-login": "playwright test --project=authenticated",
-    "test:platform": "npm run test:url && npm run test:login && npm run test:signup && npm run test:phone && npm run test:features",
+    "test:headed": "playwright test --headed",
     "test:chromium": "playwright test --project=chromium",
     "test:headed:all": "playwright test --headed",
     "report": "playwright show-report",
-    "report:platform": "node scripts/generatePlatformReport.cjs"
+    "report:platform": "node scripts/generatePlatformReportHtml.cjs",
+    "report:platform:log": "node scripts/generatePlatformReport.cjs"
   },
   "keywords": [],
   "author": "",

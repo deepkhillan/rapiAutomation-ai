@@ -259,11 +259,12 @@ export class BuySellPage {
         await this.clearPageSelection();
         await this.dismissOpenModals();
 
-        await this.actionButton.waitFor({ state: 'visible', timeout: 15000 });
-        let isEnabled = await this.actionButton.isEnabled();
+        await this.actionButton.waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+        if (this.page.isClosed()) return false;
+        let isEnabled = await this.actionButton.isEnabled().catch(() => false);
         if (!isEnabled) {
             await this.page.waitForTimeout(3000);
-            isEnabled = await this.actionButton.isEnabled();
+            isEnabled = await this.actionButton.isEnabled().catch(() => false);
         }
         if (!isEnabled) {
             console.log('Action button is still DISABLED (min amount or balance).');

@@ -5,7 +5,7 @@ export class TransactionHistoryPage {
     constructor(page) {
         this.page = page;
         this.sidebarLink = page.locator('a[href*="transaction-history" i], a:has-text("Transaction History")').first();
-        this.rapixPayTab = page.locator('button, [role="tab"], div').filter({ hasText: /^RapiX Pay$/ }).first();
+        this.rapixPayTab = page.locator('button, [role="tab"], a, div').filter({ hasText: /RapiX Pay|Rapix Pay/i }).first();
         this.masterHistoryButton = page.locator('button:has-text("Master Trxn History"), button:has-text("Master")').first();
         this.historyTable = page.locator('table').first();
         this.totalCountText = page.locator('.total-count, .items-count').first();
@@ -24,8 +24,13 @@ export class TransactionHistoryPage {
 
     async switchToRapixPay() {
         console.log('Switching to Rapix Pay tab...');
-        await this.rapixPayTab.click();
+        if (!(await this.rapixPayTab.isVisible({ timeout: 8000 }).catch(() => false))) {
+            console.log('Rapix Pay tab not visible on transaction history.');
+            return false;
+        }
+        await this.rapixPayTab.click({ timeout: 10000 });
         await this.page.waitForTimeout(2000);
+        return true;
     }
 
     async getTransactionCount() {

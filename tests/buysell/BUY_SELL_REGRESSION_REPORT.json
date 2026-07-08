@@ -1,0 +1,319 @@
+{
+  "generatedAt": "2026-07-08T05:25:10.216Z",
+  "environment": "https://uat-eks.rapixchange.com",
+  "durationMs": 1855292,
+  "summary": {
+    "totalCoins": 20,
+    "buy": {
+      "passed": 0,
+      "failed": 20,
+      "passRate": "0%"
+    },
+    "sell": {
+      "passed": 0,
+      "failed": 20,
+      "passRate": "0%"
+    },
+    "locators": {
+      "passed": 5,
+      "failed": 1
+    },
+    "warnings": 42
+  },
+  "coins": [
+    "BTC",
+    "ADA",
+    "ALGO",
+    "AVAX",
+    "BCH",
+    "DOGE",
+    "ETH",
+    "LTC",
+    "NEAR",
+    "POL",
+    "SOL",
+    "TRX",
+    "TRX-USDT",
+    "UNI",
+    "USDC-ETH",
+    "USDC-BASE",
+    "USDT-ETH",
+    "XLM",
+    "XRP",
+    "XTZ"
+  ],
+  "buyResults": [
+    {
+      "coin": "BTC",
+      "success": false,
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*=\"navTab\"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible\u001b[22m\n"
+    },
+    {
+      "coin": "ADA",
+      "success": false,
+      "message": "locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.chooseAssetModal, [role=\"dialog\"].chooseAssetModal, .modal.chooseAssetModal').first().getByText('ADA', { exact: true }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "ALGO",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "AVAX",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "BCH",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "DOGE",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "ETH",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "LTC",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "NEAR",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "POL",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "SOL",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "TRX",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "TRX-USDT",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "UNI",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "USDC-ETH",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "USDC-BASE",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "USDT-ETH",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "XLM",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "XRP",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "XTZ",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    }
+  ],
+  "sellResults": [
+    {
+      "coin": "BTC",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "ADA",
+      "success": false,
+      "message": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "ALGO",
+      "success": false,
+      "message": "locator.click: Test timeout of 1800000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n"
+    },
+    {
+      "coin": "AVAX",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "BCH",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "DOGE",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "ETH",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "LTC",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "NEAR",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "POL",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "SOL",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "TRX",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "TRX-USDT",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "UNI",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "USDC-ETH",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "USDC-BASE",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "USDT-ETH",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "XLM",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "XRP",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "coin": "XTZ",
+      "success": false,
+      "message": "page.waitForTimeout: Target page, context or browser has been closed"
+    }
+  ],
+  "locatorChecks": [
+    {
+      "name": "Trading panel",
+      "ok": true
+    },
+    {
+      "name": "Buy tab (navTab)",
+      "ok": true
+    },
+    {
+      "name": "Sell tab (navTab)",
+      "ok": true
+    },
+    {
+      "name": "Submit button (not navTab)",
+      "ok": false
+    },
+    {
+      "name": "You Pay spinbutton",
+      "ok": true
+    },
+    {
+      "name": "You Receive coin button",
+      "ok": true
+    }
+  ],
+  "issues": [
+    "Locators: Submit button (not navTab) not visible.",
+    "Dropdown showed 1 coins; merged with known list (20 total).",
+    "BUY BTC: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('button:not(.navTab):not([class*=\"navTab\"])').filter({ hasText: /^Buy$|^Sell$|^Exchange$/ }).last() to be visible\u001b[22m\n",
+    "BUY ADA: locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.chooseAssetModal, [role=\"dialog\"].chooseAssetModal, .modal.chooseAssetModal').first().getByText('ADA', { exact: true }).first()\u001b[22m\n",
+    "BUY ALGO: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY AVAX: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY BCH: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY DOGE: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY ETH: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY LTC: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY NEAR: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY POL: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY SOL: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY TRX: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY TRX-USDT: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY UNI: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY USDC-ETH: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY USDC-BASE: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY USDT-ETH: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY XLM: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY XRP: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "BUY XTZ: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Receive' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "SELL BTC: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "SELL ADA: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "SELL ALGO: locator.click: Test timeout of 1800000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div, section, form').filter({ hasText: 'You Pay' }).filter({ hasText: 'You Receive' }).first().locator('div, section').filter({ hasText: 'You Pay' }).first().getByRole('button').filter({ hasNotText: /US Dollar/ }).first()\u001b[22m\n",
+    "SELL AVAX: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL BCH: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL DOGE: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL ETH: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL LTC: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL NEAR: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL POL: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL SOL: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL TRX: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL TRX-USDT: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL UNI: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL USDC-ETH: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL USDC-BASE: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL USDT-ETH: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL XLM: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL XRP: page.waitForTimeout: Target page, context or browser has been closed",
+    "SELL XTZ: page.waitForTimeout: Target page, context or browser has been closed"
+  ]
+}

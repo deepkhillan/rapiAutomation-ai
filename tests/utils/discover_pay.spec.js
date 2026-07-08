@@ -2,43 +2,23 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage.js';
 import { providedCredentials } from '../utils/testData.js';
 
+/** Discovery helper – verifies Rapix Pay navigation after login (uses fresh login, not saved auth). */
 test('Discover Rapix Pay UI', async ({ page }) => {
     test.setTimeout(120000);
     const loginPage = new LoginPage(page);
 
-    console.log('--- Logging in with providedCredentials ---');
     await loginPage.goto();
     await loginPage.login(providedCredentials.email, providedCredentials.password);
     await loginPage.enterPin(providedCredentials.pin);
+    await page.waitForURL((url) => !url.pathname.includes('/login'), { timeout: 60000 }).catch(() => {});
 
-    console.log('--- Checking current URL ---');
-    console.log('URL after login:', page.url());
-
-    console.log('--- Navigating to Rapix Pay via sidebar ---');
-    const payLink = page.locator('a:has-text("Rapix Pay"), .nav-link:has-text("Rapix Pay"), a[href*="rapix-pay"]').first();
+    const payLink = page.locator('a:has-text("Rapix Pay"), a:has-text("RapiX Pay"), a[href*="rapix-pay"]').first();
+    await expect(payLink).toBeVisible({ timeout: 15000 });
     await payLink.click();
-    await page.waitForTimeout(5000);
-    await page.screenshot({ path: 'screenshots/rapix_pay_main_new.png' });
-    console.log('Rapix Pay URL:', page.url());
+    await page.waitForURL(/rapix-?pay/i, { timeout: 30000 }).catch(() => {});
+    expect(page.url()).toMatch(/rapix-?pay/i);
 
-    // Send button
     const sendBtn = page.locator('button:has-text("Send")').first();
-    if (await sendBtn.isVisible()) {
-        console.log('Clicking Send button...');
-        await sendBtn.click();
-        await page.waitForTimeout(3000);
-        await page.screenshot({ path: 'screenshots/rapix_pay_send_modal_new.png' });
-    }
-
-    // Wallets
-    console.log('--- Navigating to Wallets ---');
-    await page.locator('a:has-text("Wallets")').first().click();
-    await page.waitForTimeout(5000);
-    await page.screenshot({ path: 'screenshots/wallets_page_new.png' });
-
-    // History
-    console.log('--- Navigating to History ---');
-    await page.locator('a:has-text("Transaction History")').first().click();
-    await page.waitForTimeout(5000);
-    await page.screenshot({ path: 'screenshots/history_page_new.png' });
+    const sendVisible = await sendBtn.isVisible({ timeout: 8000 }).catch(() => false);
+    expect(sendVisible).toBeTruthy();
 });

@@ -130,8 +130,8 @@ test.describe('Signup - Positive Test Cases', () => {
         // Phone number might be formatted, so strip non-digits for comparison
         const phoneValue = await signupPage.mobileNumberInput.inputValue();
         const digitsOnly = phoneValue.replace(/\D/g, '');
-        // The digitsOnly will likely include the country code (91)
-        expect(digitsOnly).toContain(userData.phone);
+        const expectedDigits = userData.phone.replace(/\D/g, '');
+        expect(digitsOnly.endsWith(expectedDigits) || digitsOnly.includes(expectedDigits)).toBeTruthy();
 
         expect(await signupPage.referralCodeInput.inputValue()).toBe(userData.referralCode);
     });

@@ -65,6 +65,13 @@ export class LoginPage {
      */
     async waitForLoginForm(timeoutMs = 45000) {
         await this.page.waitForURL('**/login', { timeout: 15000 }).catch(() => {});
+        const skipBtn = this.page.locator(
+            'button:has-text("Skip"), button:has-text("Get Started"), .carousel-control-next, [class*="skip" i]',
+        ).first();
+        if (await skipBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+            await skipBtn.click().catch(() => {});
+            await this.page.waitForTimeout(800);
+        }
         await this.emailInput.waitFor({ state: 'visible', timeout: timeoutMs });
         await this.passwordInput.waitFor({ state: 'visible', timeout: 10000 });
     }
@@ -182,7 +189,19 @@ export class LoginPage {
      * Navigate to signup page from login.
      */
     async navigateToSignup() {
-        await this.signupLink.click();
+        const href = await this.signupLink.getAttribute('href').catch(() => null);
+        if (href && href !== '#') {
+            try {
+                const base = this.page.url();
+                const target = href.startsWith('http') ? href : new URL(href, base).href;
+                await this.page.goto(target, { waitUntil: 'domcontentloaded', timeout: 30000 });
+            } catch {
+                await this.signupLink.click({ timeout: 15000 });
+            }
+        } else {
+            await this.signupLink.click({ timeout: 15000 });
+        }
+        await this.page.waitForURL('**/signup**', { timeout: 30000 });
     }
 
     /**

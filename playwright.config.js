@@ -37,14 +37,18 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['list'],
+    ['html', { open: 'never', outputFolder: 'playwright-report' }],
+    ['json', { outputFile: 'test-results/platform-results.json' }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: 'https://uat-eks.rapixchange.com',
 
-    /* Run browser in headed mode */
-    headless: false,
+    /* Run headless unless PW_HEADLESS=0 (set for local debugging) */
+    headless: process.env.PW_HEADLESS !== '0',
 
     actionTimeout: 30000,
     navigationTimeout: 60000,
@@ -88,7 +92,7 @@ export default defineConfig({
         /utils\/dump_html\.spec\.js/,
         /utils\/dump_history\.spec\.js/,
       ],
-      dependencies: ['authenticated'],
+      dependencies: ['auth-setup'],
     },
   ],
 });

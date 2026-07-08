@@ -1,0 +1,25 @@
+Metric,Value
+Report Generated,2026-07-08T12:52:52.982Z
+Environment,https://uat-eks.rapixchange.com
+Overall Result,FAIL
+Total Tests,132
+Passed,96
+Failed,20
+Skipped,9
+Flaky,7
+Pass Rate (%),73
+Duration (seconds),10805
+
+Feature Area,Passed,Failed,Skipped,Flaky,Total,Pass Rate (%)
+Auth Setup,1,0,0,0,1,100
+Buy/Sell,2,4,1,1,8,25
+Dashboard,0,1,0,2,3,0
+Deposit/Withdraw,4,6,0,0,10,40
+Internal Transfer,4,3,2,0,9,44
+Login,37,1,1,3,42,88
+Other,3,0,0,1,4,75
+RapiX Pay,1,3,0,0,4,25
+Signup,34,1,0,0,35,97
+Swap,5,1,5,0,11,45
+Transaction History,4,0,0,0,4,100
+URL Verification,1,0,0,0,1,100

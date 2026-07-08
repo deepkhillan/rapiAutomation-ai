@@ -22,8 +22,43 @@ export class WalletPage {
         }
         await this.page.waitForLoadState('domcontentloaded').catch(() => {});
         await this.ensureCryptoWalletTab();
-        await this.page.waitForTimeout(2000);
+        await this.walletsTable.locator('tbody tr').first()
+            .waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+        if (!this.page.isClosed()) {
+            await this.page.waitForTimeout(800).catch(() => {});
+        }
         console.log(`Wallets URL: ${this.page.url()}`);
+    }
+
+    /** Click Deposit/Withdraw/Send on a wallet table row. Returns false if row or action missing. */
+    async clickRowAction(coinSymbol, actionPattern = /Deposit|Receive/i) {
+        await this.ensureCryptoWalletTab();
+        const row = this.page.locator('tr, [class*="wallet-row"], [class*="table-row"]')
+            .filter({ hasText: new RegExp(coinSymbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') }).first();
+        if (!(await row.isVisible({ timeout: 8000 }).catch(() => false))) return false;
+        const btn = row.locator('button, a').filter({ hasText: actionPattern }).first();
+        if (!(await btn.isVisible({ timeout: 4000 }).catch(() => false))) return false;
+        await btn.click({ timeout: 10000 });
+        await this.page.waitForTimeout(2500);
+        return true;
+    }
+
+    async hasDepositDetailsVisible() {
+        const selectors = [
+            'text=/0x[a-fA-F0-9]{40}/',
+            'text=/bc1[a-z0-9]+/i',
+            'text=/deposit address|wallet address|receive/i',
+            '[class*="address"]',
+            '[class*="qr"]',
+            'canvas',
+            'img[alt*="QR" i]',
+        ];
+        for (const sel of selectors) {
+            if (await this.page.locator(sel).first().isVisible({ timeout: 3000 }).catch(() => false)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     async ensureCryptoWalletTab() {

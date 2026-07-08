@@ -1,0 +1,159 @@
+Metric,Value
+Report Generated,2026-07-08T12:52:52.982Z
+Environment,https://uat-eks.rapixchange.com
+Overall Result,FAIL
+Total Tests,132
+Passed,96
+Failed,20
+Skipped,9
+Flaky,7
+Pass Rate (%),73
+Duration (seconds),10805
+
+Feature Area,Passed,Failed,Skipped,Flaky,Total,Pass Rate (%)
+Auth Setup,1,0,0,0,1,100
+Buy/Sell,2,4,1,1,8,25
+Dashboard,0,1,0,2,3,0
+Deposit/Withdraw,4,6,0,0,10,40
+Internal Transfer,4,3,2,0,9,44
+Login,37,1,1,3,42,88
+Other,3,0,0,1,4,75
+RapiX Pay,1,3,0,0,4,25
+Signup,34,1,0,0,35,97
+Swap,5,1,5,0,11,45
+Transaction History,4,0,0,0,4,100
+URL Verification,1,0,0,0,1,100
+
+#,Test ID,Test Name,Module,Duration,Result,Notes
+1,TC-BS-NEG-01,"Buy with amount below minimum – button disabled, validation shown, or no success on submit",Buy/Sell,96s,FAIL,Test timeout of 90000ms exceeded.
+2,TC-BS-NEG-02,"Buy with empty amount – submit not possible, validation, or no success on submit",Buy/Sell,146s,FAIL,Test timeout of 90000ms exceeded.
+3,TC-BS-POS-04,Exchange form (amount input or card) is visible on Buy,Buy/Sell,124s,FAIL,Test timeout of 90000ms exceeded.
+4,TC-DASH-POS-03,"Sidebar navigation links visible (Wallets, Buy/Sell, etc.)",Dashboard,103s,FAIL,"Test timeout of 60000ms exceeded while running ""beforeEach"" hook."
+5,TC-DW-DEP-04,Deposit – USDT – address and network displayed,Deposit/Withdraw,127s,FAIL,Test timeout of 90000ms exceeded.
+6,TC-DW-DEP-05,Deposit – all supported coins – each shows deposit entry or address,Deposit/Withdraw,101s,FAIL,"Test timeout of 90000ms exceeded while running ""beforeEach"" hook."
+7,TC-DW-NEG-WTH-03,Withdraw – invalid address format shows validation,Deposit/Withdraw,32s,FAIL,Error: expect(received).toBeTruthy()
+8,TC-DW-WTH-01,Withdraw – section/page accessible,Deposit/Withdraw,111s,FAIL,"Test timeout of 90000ms exceeded while running ""beforeEach"" hook."
+9,TC-DW-WTH-02,Withdraw – BTC – form has address and amount fields,Deposit/Withdraw,101s,FAIL,"Test timeout of 90000ms exceeded while running ""beforeEach"" hook."
+10,TC-DW-WTH-03,Withdraw – ETH – form has address and amount fields,Deposit/Withdraw,96s,FAIL,Test timeout of 90000ms exceeded.
+11,TC-LP-04,Navigation to signup page from login,Login,122s,FAIL,"Test timeout of 120000ms exceeded while running ""beforeEach"" hook."
+12,TC-NEG-07,Page refresh after order does not duplicate – single entry in history,Buy/Sell,107s,FAIL,Test timeout of 90000ms exceeded.
+13,TC-RP-01,Valid Rapix Pay Order Flow,RapiX Pay,191s,FAIL,Test timeout of 180000ms exceeded.
+14,TC-RP-02,Negative - Negative orders,RapiX Pay,142s,FAIL,TimeoutError: locator.click: Timeout 30000ms exceeded.
+15,TC-RP-02,Negative - Zero orders,RapiX Pay,184s,FAIL,TimeoutError: locator.click: Timeout 30000ms exceeded.
+16,TC-SN-PH-01,Phone number too short (less than 10 digits),Signup,22s,FAIL,Error: expect(received).toBeTruthy()
+17,TC-SW-02,"Crypto Swap – full flow: default pair, click Continue, then verify Successfully Swap popup",Swap,77s,FAIL,TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+18,TC-TR-E2E-CRYPTO,"Internal Transfer – Crypto 0.1 – full flow, Continue, PIN 111111, order completed",Internal Transfer,60s,FAIL,TimeoutError: locator.click: Timeout 30000ms exceeded.
+19,TC-TR-NEG-CRYPTO-01,Crypto transfer – insufficient balance shows validation,Internal Transfer,63s,FAIL,Error: expect(received).toBeTruthy()
+20,TC-TR-NEG-FIAT-02,Fiat transfer – below minimum amount shows validation,Internal Transfer,37s,FAIL,Error: expect(received).toBeTruthy()
+21,,Discover Rapix Pay UI,Other,57s,FLAKY,Passed on retry
+22,TC-BS-POS-02,Buy tab is visible and clickable,Buy/Sell,53s,FLAKY,Passed on retry
+23,TC-DASH-POS-01,"After login, main app loads (not login page)",Dashboard,31s,FLAKY,Passed on retry
+24,TC-DASH-POS-02,Dashboard or home – balance/summary or main content visible,Dashboard,24s,FLAKY,Passed on retry
+25,TC-LN-23,Login with leading/trailing spaces in email,Login,11s,FLAKY,Passed on retry
+26,TC-LP-01,Login page loads successfully,Login,101s,FLAKY,Passed on retry
+27,TC-LP-03,Password visibility toggle functionality,Login,81s,FLAKY,Passed on retry
+28,,Place BUY orders for all coins → then SELL orders for all coins (select from dropdown); report issues,Buy/Sell,7s,SKIPPED,Skipped
+29,TC-LP-09,Google Sign In button is visible and clickable,Login,12s,SKIPPED,Skipped
+30,TC-SW-03,"Crypto Swap – success popup shows ""successfully swap"" text to confirm order completed",Swap,0s,SKIPPED,Skipped
+31,TC-SW-04,Swap page loads – Crypto Swap tab and You Pay / You Receive visible,Swap,0s,SKIPPED,Skipped
+32,TC-SW-05,Crypto Swap – You Pay amount field accepts 0.005 and Swap button visible,Swap,0s,SKIPPED,Skipped
+33,TC-SW-06,Insufficient balance – order not executed and validation message shown,Swap,0s,SKIPPED,Skipped
+34,TC-SW-07,Swap with default pair (BTC-USDT) – place order without opening asset dropdown,Swap,0s,SKIPPED,Skipped
+35,TC-TR-NEG-CRYPTO-03,Crypto transfer – invalid recipient email shows validation,Internal Transfer,32s,SKIPPED,Skipped
+36,TC-TR-NEG-FIAT-03,Fiat transfer – invalid recipient email shows validation,Internal Transfer,29s,SKIPPED,Skipped
+37,,Capture page after clicking You Pay asset dropdown,Swap,79s,PASS,
+38,,Navigate to example.com,Other,1s,PASS,
+39,,Sign in once for authenticated feature tests,Auth Setup,47s,PASS,
+40,,Simple RapiXchange navigation,Other,12s,PASS,
+41,,Simple test,Other,0s,PASS,
+42,TC-BS-POS-01,Buy/Sell page loads and URL contains buysell,Buy/Sell,68s,PASS,
+43,TC-BS-POS-03,Sell tab is visible and clickable,Buy/Sell,88s,PASS,
+44,TC-DW-DEP-01,Deposit – Wallets page loads and deposit section visible,Deposit/Withdraw,54s,PASS,
+45,TC-DW-DEP-02,Deposit – BTC – deposit address/QR displayed,Deposit/Withdraw,40s,PASS,
+46,TC-DW-DEP-03,Deposit – ETH – deposit address/network displayed,Deposit/Withdraw,88s,PASS,
+47,TC-DW-NEG-WTH-01,Withdraw – insufficient balance shows validation,Deposit/Withdraw,35s,PASS,
+48,TC-LN-01,Login with empty email and password,Login,13s,PASS,
+49,TC-LN-02,Login with invalid email format - missing @,Login,13s,PASS,
+50,TC-LN-03,Login with invalid email format - missing domain,Login,13s,PASS,
+51,TC-LN-04,Login with invalid email format - no username,Login,17s,PASS,
+52,TC-LN-05,Login with unregistered email,Login,22s,PASS,
+53,TC-LN-06,Login with incorrect password,Login,16s,PASS,
+54,TC-LN-07,Login with empty email field,Login,10s,PASS,
+55,TC-LN-08,Login with empty password field,Login,13s,PASS,
+56,TC-LN-09,Login with SQL injection in email field,Login,18s,PASS,
+57,TC-LN-10,Login with SQL injection in password field,Login,10s,PASS,
+58,TC-LN-11,Login with XSS attempt in email field,Login,10s,PASS,
+59,TC-LN-12,Login with XSS attempt in password field,Login,23s,PASS,
+60,TC-LN-13,Login with special characters in password,Login,19s,PASS,
+61,TC-LN-14,Login with very long email (boundary test),Login,19s,PASS,
+62,TC-LN-15,Login with very long password (boundary test),Login,18s,PASS,
+63,TC-LN-16,Login with email containing spaces,Login,15s,PASS,
+64,TC-LN-17,Login with whitespace-only email,Login,23s,PASS,
+65,TC-LN-18,Login with whitespace-only password,Login,18s,PASS,
+66,TC-LN-19,Multiple invalid emails test,Login,35s,PASS,
+67,TC-LN-20,Login with wrong account type selection,Login,14s,PASS,
+68,TC-LN-21,Rapid multiple login attempts,Login,14s,PASS,
+69,TC-LN-22,Login with email in uppercase,Login,13s,PASS,
+70,TC-LN-24,Login with Unicode characters in email,Login,15s,PASS,
+71,TC-LN-25,Login form submission without JavaScript,Login,13s,PASS,
+72,TC-LP-02,All login form elements are visible and interactive,Login,18s,PASS,
+73,TC-LP-05,Navigation to forgot password page,Login,27s,PASS,
+74,TC-LP-06,Account type switching between User and Agent,Login,20s,PASS,
+75,TC-LP-07,Email and password fields accept input,Login,19s,PASS,
+76,TC-LP-08,Login button is clickable,Login,20s,PASS,
+77,TC-LP-10,Passkey Login button is visible and clickable,Login,15s,PASS,
+78,TC-LP-11,Form fields can be cleared and refilled,Login,19s,PASS,
+79,TC-LP-12,Login form maintains state during account type switch,Login,17s,PASS,
+80,TC-LP-13,Forgot password link is accessible,Login,60s,PASS,
+81,TC-LP-14,Signup link is accessible,Login,26s,PASS,
+82,TC-LP-15,Login form accepts valid email format,Login,16s,PASS,
+83,TC-LP-16,Successful login with valid User credentials,Login,25s,PASS,
+84,TC-LP-17,Successful login with valid Agent credentials,Login,12s,PASS,
+85,TC-RP-NEG-03,RapiX Pay – invalid recipient email shows validation,RapiX Pay,94s,PASS,
+86,TC-SN-01,Submit form with all empty fields,Signup,33s,PASS,
+87,TC-SN-02,Submit with invalid email format - missing @,Signup,33s,PASS,
+88,TC-SN-03,Submit with invalid email format - missing domain,Signup,22s,PASS,
+89,TC-SN-04,Submit with password mismatch,Signup,22s,PASS,
+90,TC-SN-05,Submit without accepting terms and conditions,Signup,18s,PASS,
+91,TC-SN-06,Submit with missing full name,Signup,33s,PASS,
+92,TC-SN-07,Submit with missing email,Signup,22s,PASS,
+93,TC-SN-08,Submit with missing password,Signup,18s,PASS,
+94,TC-SN-09,Submit with missing confirm password,Signup,18s,PASS,
+95,TC-SN-10,Submit with missing mobile number,Signup,17s,PASS,
+96,TC-SN-11,Submit with invalid mobile number format - letters,Signup,40s,PASS,
+97,TC-SN-12,Submit with special characters in name field,Signup,65s,PASS,
+98,TC-SN-13,Submit with SQL injection in email field,Signup,27s,PASS,
+99,TC-SN-14,Submit with SQL injection in name field,Signup,25s,PASS,
+100,TC-SN-15,Submit with XSS attempt in email field,Signup,20s,PASS,
+101,TC-SN-16,Submit with XSS attempt in name field,Signup,25s,PASS,
+102,TC-SN-17,Submit with very long email (boundary test),Signup,19s,PASS,
+103,TC-SN-18,Submit with very long name (boundary test),Signup,21s,PASS,
+104,TC-SN-19,Submit with whitespace-only name,Signup,24s,PASS,
+105,TC-SN-20,Submit with email containing spaces,Signup,18s,PASS,
+106,TC-SN-21,Multiple invalid emails test,Signup,46s,PASS,
+107,TC-SN-PH-02,Phone number too long (more than 10 digits),Signup,18s,PASS,
+108,TC-SN-PH-03,Phone number with leading zero,Signup,22s,PASS,
+109,TC-SN-PH-04,"Phone number with special characters (+, -, (, ))",Signup,19s,PASS,
+110,TC-SN-PH-05,Phone number with spaces,Signup,20s,PASS,
+111,TC-SN-PH-06,Changing country code updates validation or mask,Signup,26s,PASS,
+112,TC-SP-01,Successful signup with valid User account data,Signup,19s,PASS,
+113,TC-SP-03,Successful signup with optional referral code,Signup,21s,PASS,
+114,TC-SP-04,Password visibility toggle functionality,Signup,17s,PASS,
+115,TC-SP-05,Confirm password visibility toggle functionality,Signup,16s,PASS,
+116,TC-SP-06,Navigation to login page from signup,Signup,19s,PASS,
+117,TC-SP-08,Terms and conditions checkbox functionality,Signup,17s,PASS,
+118,TC-SP-09,All form fields are editable and accept input,Signup,29s,PASS,
+119,TC-SP-10,Signup form elements are visible and interactive,Signup,22s,PASS,
+120,TC-SW-01,"Crypto Swap – tap Swapping tab, select ETH-USDT via Choose your asset, enter 0.005 in You Pay, click Swap",Swap,93s,PASS,
+121,TC-SW-FIAT-NEG-01,Fiat Swap – zero amount does not execute (button disabled or validation),Swap,24s,PASS,
+122,TC-SW-FIAT-POS-01,Fiat Swap tab is visible on Swap page,Swap,20s,PASS,
+123,TC-SW-FIAT-POS-02,Fiat Swap tab click – form or content area visible,Swap,16s,PASS,
+124,TC-TH-NEG-01,Transaction History – invalid filter (if filter exists) does not break page,Transaction History,52s,PASS,
+125,TC-TH-POS-01,Transaction History page loads and sidebar link works,Transaction History,45s,PASS,
+126,TC-TH-POS-02,Transaction History – table or content area visible,Transaction History,33s,PASS,
+127,TC-TH-POS-03,RapiX Pay tab (if present) is clickable,Transaction History,65s,PASS,
+128,TC-TR-01,Internal Transfer – Fiat (USD) – page loads and form is available,Internal Transfer,23s,PASS,
+129,TC-TR-02,Internal Transfer – Crypto (BTC/ETH) – page loads and asset selection available,Internal Transfer,21s,PASS,
+130,TC-TR-03,Internal Transfer – transfer to user email (jot.antier@gmail.com),Internal Transfer,21s,PASS,
+131,TC-TR-E2E-FIAT,"Internal Transfer – Fiat 10 – Fiat Wallet tab → Internal Transfer → Send USD, Continue, PIN, order completed",Internal Transfer,37s,PASS,
+132,,Verify UAT URL is being used,URL Verification,13s,PASS,
